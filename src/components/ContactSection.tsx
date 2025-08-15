@@ -386,7 +386,7 @@ const ContactSection = () => {
               
               {/* Abode Bimtech Brand Name */}
               <div className="text-left -ml-32 lg:-ml-64 xl:-ml-80 w-full m-0 p-0">
-                <h2 className="text-[6rem] lg:text-[8rem] font-normal text-white/90 tracking-wider leading-none whitespace-nowrap m-0 p-0">
+                <h2 className="text-[12rem] lg:text-[16rem] font-normal text-white/90 tracking-wider leading-none whitespace-nowrap m-0 p-0">
                   Abode Bimtech
                 </h2>
               </div>
