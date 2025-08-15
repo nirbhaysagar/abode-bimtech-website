@@ -132,16 +132,16 @@ const ContactSection = () => {
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-20">
+      <div className="relative z-10 container mx-auto px-4 py-16">
         {/* Contact Form Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-16">
           {/* Contact Form */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div className="text-center lg:text-left">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                 Get In Touch
               </h2>
-              <p className="text-xl text-white/80 max-w-2xl">
+              <p className="text-lg text-white/80 max-w-2xl">
                 Ready to transform your BIM projects? Let's discuss how we can help you achieve excellence in your architectural and construction endeavors.
               </p>
             </div>
@@ -280,38 +280,38 @@ const ContactSection = () => {
             {/* Main Footer Content - Enhanced Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-0">
               {/* Left Section - Contact Info */}
-              <div className="lg:col-span-5 space-y-10">
-                <div className="space-y-8">
-                  <h3 className="text-4xl font-light text-white/90 tracking-wider">Get in Touch</h3>
-                  <div className="space-y-6">
-                    <div className="flex items-center space-x-5 group cursor-pointer">
-                      <div className="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10">
-                        <Phone className="w-7 h-7 text-white/70" />
+              <div className="lg:col-span-5 space-y-8">
+                <div className="space-y-6">
+                  <h3 className="text-3xl font-light text-white/90 tracking-wider">Get in Touch</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4 group cursor-pointer">
+                      <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10">
+                        <Phone className="w-6 h-6 text-white/70" />
                       </div>
                       <div>
                         <p className="text-white/60 text-sm uppercase tracking-widest font-medium">Phone</p>
-                        <p className="text-white text-2xl font-medium">+91 6396594184</p>
+                        <p className="text-white text-xl font-medium">+91 6396594184</p>
                       </div>
                     </div>
                     
-                    <div className="flex items-center space-x-5 group cursor-pointer">
-                      <div className="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10">
-                        <Mail className="w-7 h-7 text-white/70" />
+                    <div className="flex items-center space-x-4 group cursor-pointer">
+                      <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10">
+                        <Mail className="w-6 h-6 text-white/70" />
                       </div>
                       <div>
                         <p className="text-white/60 text-sm uppercase tracking-widest font-medium">Email</p>
-                        <p className="text-white text-2xl font-medium">abodebimtech@gmail.com</p>
+                        <p className="text-white text-xl font-medium">abodebimtech@gmail.com</p>
                       </div>
                     </div>
                     
-                    <div className="flex items-center space-x-5 group cursor-pointer">
-                      <div className="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10">
-                        <MapPin className="w-7 h-7 text-white/70" />
+                    <div className="flex items-center space-x-4 group cursor-pointer">
+                      <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10">
+                        <MapPin className="w-6 h-6 text-white/70" />
                       </div>
                       <div>
                         <p className="text-white/60 text-sm uppercase tracking-widest font-medium">Address</p>
-                        <p className="text-white text-2xl font-medium">KAILASH VIHAR</p>
-                        <p className="text-white text-2xl font-medium">DAYALBAGH AGRA-5</p>
+                        <p className="text-white text-xl font-medium">KAILASH VIHAR</p>
+                        <p className="text-white text-xl font-medium">DAYALBAGH AGRA-5</p>
                       </div>
                     </div>
                   </div>
@@ -319,25 +319,25 @@ const ContactSection = () => {
               </div>
 
               {/* Center Section - Quick Actions */}
-              <div className="lg:col-span-3 space-y-8">
-                <h3 className="text-3xl font-light text-white/90 tracking-wide">Quick Actions</h3>
-                <div className="space-y-4">
-                  <button className="w-full text-left py-4 px-5 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105">
-                    <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-lg font-medium">Get Quote</span>
+              <div className="lg:col-span-3 space-y-6">
+                <h3 className="text-2xl font-light text-white/90 tracking-wide">Quick Actions</h3>
+                <div className="space-y-3">
+                  <button className="w-full text-left py-3 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105">
+                    <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-base font-medium">Get Quote</span>
                   </button>
-                  <button className="w-full text-left py-4 px-5 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105">
-                    <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-lg font-medium">Book Consultation</span>
+                  <button className="w-full text-left py-3 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105">
+                    <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-base font-medium">Book Consultation</span>
                   </button>
-                  <button className="w-full text-left py-4 px-5 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105">
-                    <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-lg font-medium">View Portfolio</span>
+                  <button className="w-full text-left py-3 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105">
+                    <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-base font-medium">View Portfolio</span>
                   </button>
                 </div>
               </div>
 
               {/* Right Section - Social & Stats */}
-              <div className="lg:col-span-4 space-y-8">
-                <h3 className="text-3xl font-light text-white/90 tracking-wide">Connect</h3>
-                <div className="flex space-x-4">
+              <div className="lg:col-span-4 space-y-6">
+                <h3 className="text-2xl font-light text-white/90 tracking-wide">Connect</h3>
+                <div className="flex space-x-3">
                   {[
                     { icon: Linkedin, bg: 'bg-blue-600/20', hover: 'hover:bg-blue-600/30', border: 'border-blue-500/20' },
                     { icon: Twitter, bg: 'bg-sky-500/20', hover: 'hover:bg-sky-500/30', border: 'border-sky-500/20' },
@@ -349,21 +349,21 @@ const ContactSection = () => {
                       <a
                         key={index}
                         href="#"
-                        className={`w-14 h-14 ${social.bg} ${social.hover} ${social.border} rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 border hover:shadow-lg`}
+                        className={`w-12 h-12 ${social.bg} ${social.hover} ${social.border} rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 border hover:shadow-lg`}
                       >
-                        <IconComponent className="w-6 h-6 text-white/80" />
+                        <IconComponent className="w-5 h-5 text-white/80" />
                       </a>
                     );
                   })}
                 </div>
                 
-                <div className="pt-6">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="text-center p-6 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300 hover:scale-105">
-                      <p className="text-3xl font-bold text-white mb-2">500+</p>
+                <div className="pt-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-4 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300 hover:scale-105">
+                      <p className="text-2xl font-bold text-white mb-2">500+</p>
                       <p className="text-white/60 text-sm uppercase tracking-wider font-medium">Projects</p>
                     </div>
-                    <div className="text-center p-6 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300 hover:scale-105">
+                    <div className="text-center p-4 bg-white/5 rounded-xl border border-white/5 hover:border-white/10 hover:border-white/10 transition-all duration-300 hover:scale-105">
                       <p className="text-2xl font-bold text-white mb-2">50+</p>
                       <p className="text-white/60 text-sm uppercase tracking-wider font-medium">Clients</p>
                     </div>
@@ -386,7 +386,7 @@ const ContactSection = () => {
               
               {/* Abode Bimtech Brand Name */}
               <div className="text-left -ml-32 lg:-ml-64 xl:-ml-80 w-full m-0 p-0">
-                <h2 className="text-[12rem] lg:text-[16rem] font-normal text-white/90 tracking-wider leading-none whitespace-nowrap m-0 p-0">
+                <h2 className="text-[6rem] lg:text-[8rem] font-normal text-white/90 tracking-wider leading-none whitespace-nowrap m-0 p-0">
                   Abode Bimtech
                 </h2>
               </div>
