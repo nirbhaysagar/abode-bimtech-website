@@ -100,18 +100,8 @@ const Navigation = () => {
           {/* Menu Content */}
           <div className="absolute top-0 right-0 w-80 h-full bg-black/95 backdrop-blur-xl border-l border-white/10 p-6">
             <div className="flex flex-col h-full">
-              {/* Close Button */}
-              <div className="flex justify-end mb-8">
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-2 rounded-lg bg-white/10 text-white hover:bg-white/20 transition-all duration-300"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-              
               {/* Navigation Items */}
-              <div className="flex-1 space-y-4">
+              <div className="flex-1 space-y-4 pt-8">
                 {navItems.map((item) => (
                   <button
                     key={item.sectionId}
