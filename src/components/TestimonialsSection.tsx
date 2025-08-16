@@ -154,10 +154,7 @@ const TestimonialsSection = () => {
 
   const ratingStats = [
     { rating: 5, count: 156, percentage: 85 },
-    { rating: 4, count: 23, percentage: 12 },
-    { rating: 3, count: 4, percentage: 2 },
-    { rating: 2, count: 1, percentage: 1 },
-    { rating: 1, count: 0, percentage: 0 }
+    { rating: 4, count: 23, percentage: 12 }
   ];
 
   return (
@@ -232,7 +229,7 @@ const TestimonialsSection = () => {
           </div>
           
           {/* Modern Rating Cards Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="flex justify-center items-center gap-8 sm:gap-12 lg:gap-16">
             {ratingStats.map((ratingStat, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className="relative bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-glow">
@@ -313,11 +310,11 @@ const TestimonialsSection = () => {
                     <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <span className="text-lg sm:text-xl font-bold text-primary">4.8</span>
+                <span className="text-lg sm:text-xl font-bold text-primary">4.9</span>
                 <span className="text-sm text-muted-foreground">/ 5.0</span>
               </div>
               <div className="text-sm text-muted-foreground">
-                Based on <span className="font-semibold text-foreground">184</span> reviews
+                Based on <span className="font-semibold text-foreground">179</span> reviews
               </div>
             </div>
           </div>
