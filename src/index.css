@@ -302,21 +302,47 @@
   }
 }
 
-/* Apple-style Gradient Running Effect */
-@keyframes gradient-flow {
+/* Torch-like Running Glow Effect */
+@keyframes torch-run {
   0% {
-    background-position: 0% 50%;
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6),
+      0 0 60px rgba(255, 255, 255, 0.4);
+    transform: rotate(0deg);
+  }
+  25% {
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6),
+      0 0 60px rgba(255, 255, 255, 0.4);
+    transform: rotate(90deg);
   }
   50% {
-    background-position: 100% 50%;
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6),
+      0 0 60px rgba(255, 255, 255, 0.4);
+    transform: rotate(180deg);
+  }
+  75% {
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6),
+      0 0 60px rgba(255, 255, 255, 0.4);
+    transform: rotate(270deg);
   }
   100% {
-    background-position: 0% 50%;
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6),
+      0 0 60px rgba(255, 255, 255, 0.4);
+    transform: rotate(360deg);
   }
 }
 
-.animate-gradient-flow {
-  animation: gradient-flow 3s ease infinite;
+.animate-torch-run {
+  animation: torch-run 4s linear infinite;
 }
 
 /* Apple-style Gradient Flow Animation */

@@ -70,11 +70,16 @@ const HeroSection = () => {
 
       {/* Enhanced Content with Better Typography and Layout */}
       <div className="relative z-10 container mx-auto px-6 text-center text-white hero-content">
-        {/* Enhanced Subtitle with Apple-style Gradient Running Effect on Button Border */}
+        {/* Enhanced Subtitle with Torch-like Running Glow Effect on Border */}
         <div className="mb-12 apple-slide-up">
           <div className="relative inline-flex">
-            {/* Animated Gradient Border Container */}
-            <div className="relative rounded-full p-[2px] bg-gradient-to-r from-blue-400 via-purple-500 via-pink-500 to-blue-400 bg-[length:400%_400%] animate-gradient-flow">
+            {/* Torch-like Running Glow Border */}
+            <div className="relative rounded-full p-[2px] border border-white/20 overflow-hidden">
+              {/* Running Glow Effect */}
+              <div className="absolute inset-0 rounded-full border-2 border-transparent">
+                <div className="absolute inset-0 rounded-full border-2 border-white/40 animate-torch-run"></div>
+              </div>
+              
               {/* Button Content */}
               <div className="flex items-center space-x-3 px-6 py-3 bg-black/20 backdrop-blur-md rounded-full">
                 <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
