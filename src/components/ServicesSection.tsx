@@ -105,7 +105,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="services" className="py-32 text-white animate-on-scroll relative overflow-hidden">
+    <section ref={sectionRef} id="services" className="py-16 sm:py-20 lg:py-32 text-white animate-on-scroll relative overflow-hidden">
       {/* Enhanced Background with Multiple Layers */}
       <div className="absolute inset-0 apple-gradient"></div>
       
@@ -114,59 +114,59 @@ const ServicesSection = () => {
       
       {/* Enhanced Floating Elements with Parallax */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl animate-float parallax"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-float parallax" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl animate-float parallax" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-blue-500/5 rounded-full blur-2xl sm:blur-3xl animate-float parallax"></div>
+        <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-10 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-purple-500/5 rounded-full blur-2xl sm:blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-blue-400/5 rounded-full blur-2xl sm:blur-3xl animate-float parallax" style={{animationDelay: '4s'}}></div>
         
         {/* Floating Geometric Shapes */}
-        <div className="absolute top-32 right-32 w-16 h-16 border border-white/20 rounded-lg rotate-45 animate-float"></div>
-        <div className="absolute bottom-32 left-32 w-12 h-12 bg-white/10 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/3 right-1/4 w-8 h-8 border-2 border-white/30 transform rotate-12 animate-float" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-16 sm:top-32 right-16 sm:right-32 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 border border-white/20 rounded-lg rotate-45 animate-float"></div>
+        <div className="absolute bottom-16 sm:bottom-32 left-16 sm:left-32 w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 bg-white/10 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/3 right-1/4 w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 border-2 border-white/30 transform rotate-12 animate-float" style={{animationDelay: '3s'}}></div>
         
         {/* Interactive Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.05]">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
+            backgroundSize: '20px 20px sm:40px 40px'
           }}></div>
         </div>
       </div>
       
-      <div className="container mx-auto px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Enhanced Header Section */}
-        <div className="text-center mb-24">
-          <div className="inline-flex items-center space-x-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 hover:scale-105 transition-transform duration-300 cursor-pointer group">
-            <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:animate-pulse"></div>
-            <span className="text-white/80 font-medium tracking-wide">WHAT WE OFFER</span>
-            <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:animate-pulse"></div>
+        <div className="text-center mb-16 sm:mb-20 lg:mb-24">
+          <div className="inline-flex items-center space-x-2 sm:space-x-3 px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-6 sm:mb-8 hover:scale-105 transition-transform duration-300 cursor-pointer group">
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full group-hover:animate-pulse"></div>
+            <span className="text-white/80 font-medium tracking-wide text-sm sm:text-base">WHAT WE OFFER</span>
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full group-hover:animate-pulse"></div>
           </div>
           
-          <h2 className="text-5xl md:text-6xl font-bold mb-10 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 lg:mb-10 tracking-tight">
             <span className="bg-gradient-to-r from-blue-200 via-white to-purple-200 bg-clip-text text-transparent">
               OUR SERVICES
             </span>
           </h2>
           
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-8 rounded-full hover:w-32 transition-all duration-500"></div>
+          <div className="w-16 sm:w-20 lg:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-6 sm:mb-8 rounded-full hover:w-20 sm:hover:w-24 lg:hover:w-32 transition-all duration-500"></div>
           
-          <p className="text-xl text-white/90 max-w-5xl mx-auto leading-relaxed font-light tracking-wide">
+          <p className="text-base sm:text-lg lg:text-xl text-white/90 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light tracking-wide px-4 sm:px-6">
             We are a one-stop-shop for MEP, architecture and engineering firms. From 3D BIM to point cloud to BIM services, 
             CAD services, Scan to BIM, Revit BIM services, Revit family creation services and final shop drawings, we deliver 
             intelligent solutions that capture every aspect of your design and build through enhanced construction documentation.
           </p>
 
-          {/* Interactive Stats Bar */}
-          <div className="flex justify-center items-center space-x-8 mt-12">
+          {/* Interactive Stats Bar - Mobile Responsive */}
+          <div className="grid grid-cols-2 lg:flex lg:justify-center lg:items-center gap-6 lg:gap-8 mt-8 sm:mt-10 lg:mt-12 max-w-2xl lg:max-w-none mx-auto">
             {stats.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
                 <div key={index} className="text-center group cursor-pointer">
-                  <div className="text-3xl font-bold text-blue-200 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-200 group-hover:scale-110 transition-transform duration-300">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-white/70 flex items-center justify-center space-x-1">
-                    <IconComponent className="w-4 h-4 text-blue-300" />
-                    <span>{stat.label}</span>
+                  <div className="text-xs sm:text-sm text-white/70 flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1">
+                    <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 text-blue-300" />
+                    <span className="text-center">{stat.label}</span>
                   </div>
                 </div>
               );
@@ -175,7 +175,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Enhanced Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 max-w-6xl lg:max-w-7xl mx-auto">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             const isHovered = hoveredService === index;
@@ -189,30 +189,30 @@ const ServicesSection = () => {
                 onMouseLeave={() => setHoveredService(null)}
               >
                 {/* Enhanced Service Card */}
-                <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-apple hover:shadow-glow transition-all duration-500 hover:transform hover:scale-105 overflow-hidden cursor-pointer">
+                <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 shadow-apple hover:shadow-glow transition-all duration-500 hover:transform hover:scale-105 overflow-hidden cursor-pointer">
                   
                   {/* Hover Effect Overlay */}
                   <div className={`absolute inset-0 ${service.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                   
                   {/* Enhanced Icon Container */}
-                  <div className={`relative z-10 w-40 h-40 glass rounded-3xl flex items-center justify-center mx-auto mb-10 group-hover:shadow-glow transition-all duration-500 border border-white/20 overflow-hidden`}>
+                  <div className={`relative z-10 w-32 h-32 sm:w-40 sm:h-40 glass rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-6 sm:mb-8 lg:mb-10 group-hover:shadow-glow transition-all duration-500 border border-white/20 overflow-hidden`}>
                     {/* Icon Background Glow */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.iconBg} rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-60`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.iconBg} rounded-2xl sm:rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-60`}></div>
                     
                     {/* Icon */}
-                    <IconComponent className="w-24 h-24 text-white relative z-10 group-hover:scale-110 transition-transform duration-500" />
+                    <IconComponent className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-white relative z-10 group-hover:scale-110 transition-transform duration-500" />
                     
                     {/* Enhanced Particle System */}
-                    <div className="absolute top-2 right-2 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                    <div className="absolute bottom-2 left-2 w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                    <div className="absolute top-1/2 left-2 w-1.5 h-1.5 bg-blue-300 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                    <div className="absolute top-1/2 right-2 w-1 h-1 bg-purple-300 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                    <div className="absolute top-2 right-2 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                    <div className="absolute bottom-2 left-2 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                    <div className="absolute top-1/2 left-2 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-300 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="absolute top-1/2 right-2 w-0.5 h-0.5 sm:w-1 sm:h-1 bg-purple-300 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
                     
                     {/* Sparkle Effect on Hover */}
                     {isHovered && (
                       <>
-                        <Sparkles className="absolute -top-2 -right-2 w-6 h-6 text-yellow-300 animate-ping" />
-                        <Zap className="absolute -bottom-2 -left-2 w-5 h-5 text-blue-300 animate-pulse" />
+                        <Sparkles className="absolute -top-2 -right-2 w-4 h-4 sm:w-6 sm:h-6 text-yellow-300 animate-ping" />
+                        <Zap className="absolute -bottom-2 -left-2 w-3 h-3 sm:w-5 sm:h-5 text-blue-300 animate-pulse" />
                       </>
                     )}
                   </div>
