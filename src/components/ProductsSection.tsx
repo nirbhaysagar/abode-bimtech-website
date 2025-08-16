@@ -217,17 +217,17 @@ const ProductsSection = () => {
                   {/* Enhanced Content with Progressive Disclosure */}
                   <div className="relative z-10 text-center">
                     {/* Category Badge */}
-                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
                       <Target className="w-3 h-3 text-primary" />
                       <span className="text-xs text-primary font-medium">{product.category}</span>
                     </div>
                     
-                    <h3 className="text-2xl font-bold mb-4 text-foreground tracking-tight group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-2xl font-bold mb-4 text-foreground tracking-tight group-hover:text-primary transition-colors duration-200">
                       {product.title}
                     </h3>
                     
                     {/* Difficulty Indicator */}
-                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-gray-100 rounded-full mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0" style={{transitionDelay: '0.1s'}}>
+                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-gray-100 rounded-full mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0" style={{transitionDelay: '0.05s'}}>
                       <TrendingUp className="w-3 h-3 text-gray-600" />
                       <span className="text-xs text-gray-600 font-medium">{product.difficulty}</span>
                     </div>
@@ -238,7 +238,7 @@ const ProductsSection = () => {
                     
                     {/* Interactive Stats on Hover */}
                     {isHovered && (
-                      <div className="grid grid-cols-3 gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-95 group-hover:scale-100">
+                      <div className="grid grid-cols-3 gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform scale-95 group-hover:scale-100">
                         {Object.entries(product.stats).map(([key, value], statIndex) => (
                           <div key={key} className="text-center p-2 bg-white/50 backdrop-blur-sm rounded-lg border border-gray-200/50">
                             <div className="text-xs font-bold text-primary">{value}</div>
@@ -250,13 +250,13 @@ const ProductsSection = () => {
                     
                     {/* Features List with Enhanced Animation */}
                     <div className="space-y-2 mb-4">
-                      <h4 className="text-xs font-semibold text-primary uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <h4 className="text-xs font-semibold text-primary uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                         Key Features
                       </h4>
                       {product.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2 text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                          <CheckCircle className="w-3 h-3 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-300" style={{transitionDelay: `${featureIndex * 0.1}s`}}>
+                        <div key={featureIndex} className="flex items-center space-x-2 text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-200">
+                          <CheckCircle className="w-3 h-3 text-primary opacity-0 group-hover:opacity-100 transition-all duration-200" />
+                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: `${featureIndex * 0.03}s`}}>
                             {feature}
                           </span>
                         </div>
@@ -265,13 +265,13 @@ const ProductsSection = () => {
                     
                     {/* Benefits List with Enhanced Animation */}
                     <div className="space-y-2 mb-6">
-                      <h4 className="text-xs font-semibold text-primary uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{transitionDelay: '0.4s'}}>
+                      <h4 className="text-xs font-semibold text-primary uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{transitionDelay: '0.1s'}}>
                         Benefits
                       </h4>
                       {product.benefits.map((benefit, benefitIndex) => (
-                        <div key={benefitIndex} className="flex items-center space-x-2 text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                          <CheckCircle className="w-3 h-3 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-300" style={{transitionDelay: `${0.5 + benefitIndex * 0.1}s`}}>
+                        <div key={benefitIndex} className="flex items-center space-x-2 text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-200">
+                          <CheckCircle className="w-3 h-3 text-primary opacity-0 group-hover:opacity-100 transition-all duration-200" />
+                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: `${0.15 + benefitIndex * 0.03}s`}}>
                             {benefit}
                           </span>
                         </div>
@@ -282,20 +282,20 @@ const ProductsSection = () => {
                     <Button 
                       variant="outline" 
                       size="sm"
-                      className="border-primary/30 text-primary hover:bg-primary/10 group-hover:border-primary transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 w-full hover:scale-105"
+                      className="border-primary/30 text-primary hover:bg-primary/10 group-hover:border-primary transition-all duration-200 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 w-full hover:scale-105"
                     >
                       <span>{product.ctaText}</span>
                       <span className="ml-2">{product.ctaIcon}</span>
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
                     </Button>
                   </div>
                   
                   {/* Enhanced Decorative Elements */}
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-r from-primary/40 to-primary/60 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-gradient-to-r from-primary/40 to-primary/60 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500" style={{transitionDelay: '0.2s'}}></div>
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-r from-primary/40 to-primary/60 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200"></div>
+                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-gradient-to-r from-primary/40 to-primary/60 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: '0.1s'}}></div>
                   
                   {/* Service Badge with Enhanced Animation */}
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-primary/10 backdrop-blur-md rounded-full border border-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-75 group-hover:scale-100">
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-primary/10 backdrop-blur-md rounded-full border border-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-200 transform scale-75 group-hover:scale-100">
                     <span className="text-xs text-primary font-medium">Service</span>
                   </div>
 

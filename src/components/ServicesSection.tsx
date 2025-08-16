@@ -220,17 +220,17 @@ const ServicesSection = () => {
                   {/* Enhanced Content with Progressive Disclosure */}
                   <div className="relative z-10 text-center">
                     {/* Category Badge */}
-                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
                       <Target className="w-3 h-3 text-blue-300" />
                       <span className="text-xs text-white/80 font-medium">{service.category}</span>
                     </div>
                     
-                    <h3 className="text-2xl font-bold mb-4 tracking-tight text-white group-hover:text-blue-200 transition-colors duration-300">
+                    <h3 className="text-2xl font-bold mb-4 tracking-tight text-white group-hover:text-blue-200 transition-colors duration-200">
                       {service.title}
                     </h3>
                     
                     {/* Difficulty Indicator */}
-                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/10 rounded-full mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0" style={{transitionDelay: '0.1s'}}>
+                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/10 rounded-full mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0" style={{transitionDelay: '0.05s'}}>
                       <TrendingUp className="w-3 h-3 text-white/60" />
                       <span className="text-xs text-white/60 font-medium">{service.difficulty}</span>
                     </div>
@@ -241,7 +241,7 @@ const ServicesSection = () => {
 
                     {/* Interactive Stats on Hover */}
                     {isHovered && (
-                      <div className="grid grid-cols-3 gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-95 group-hover:scale-100">
+                      <div className="grid grid-cols-3 gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform scale-95 group-hover:scale-100">
                         {Object.entries(service.stats).map(([key, value], statIndex) => (
                           <div key={key} className="text-center p-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
                             <div className="text-xs font-bold text-blue-200">{value}</div>
@@ -253,13 +253,13 @@ const ServicesSection = () => {
                     
                     {/* Features List with Enhanced Animation */}
                     <div className="space-y-2 mb-4">
-                      <h4 className="text-xs font-semibold text-blue-200 uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <h4 className="text-xs font-semibold text-blue-200 uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                         Key Features
                       </h4>
                       {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2 text-xs text-white/70 group-hover:text-white transition-colors duration-300">
-                          <CheckCircle className="w-3 h-3 text-blue-300 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-300" style={{transitionDelay: `${featureIndex * 0.1}s`}}>
+                        <div key={featureIndex} className="flex items-center space-x-2 text-xs text-white/70 group-hover:text-white transition-colors duration-200">
+                          <CheckCircle className="w-3 h-3 text-blue-300 opacity-0 group-hover:opacity-100 transition-all duration-200" />
+                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: `${featureIndex * 0.03}s`}}>
                             {feature}
                           </span>
                         </div>
@@ -268,13 +268,13 @@ const ServicesSection = () => {
                     
                     {/* Benefits List with Enhanced Animation */}
                     <div className="space-y-2 mb-6">
-                      <h4 className="text-xs font-semibold text-blue-200 uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{transitionDelay: '0.4s'}}>
+                      <h4 className="text-xs font-semibold text-blue-200 uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{transitionDelay: '0.1s'}}>
                         Benefits
                       </h4>
                       {service.benefits.map((benefit, benefitIndex) => (
-                        <div key={benefitIndex} className="flex items-center space-x-2 text-xs text-white/70 group-hover:text-white transition-colors duration-300">
-                          <CheckCircle className="w-3 h-3 text-blue-300 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-300" style={{transitionDelay: `${0.5 + benefitIndex * 0.1}s`}}>
+                        <div key={benefitIndex} className="flex items-center space-x-2 text-xs text-white/70 group-hover:text-white transition-colors duration-200">
+                          <CheckCircle className="w-3 h-3 text-blue-300 opacity-0 group-hover:opacity-100 transition-all duration-200" />
+                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: `${0.15 + benefitIndex * 0.03}s`}}>
                             {benefit}
                           </span>
                         </div>
@@ -285,20 +285,20 @@ const ServicesSection = () => {
                     <Button 
                       variant="outline" 
                       size="sm"
-                      className="border-white/30 text-white hover:bg-white/10 group-hover:border-white transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 w-full hover:scale-105"
+                      className="border-white/30 text-white hover:bg-white/10 group-hover:border-white transition-all duration-200 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 w-full hover:scale-105"
                     >
                       <span>{service.ctaText}</span>
                       <span className="ml-2">{service.ctaIcon}</span>
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
                     </Button>
                   </div>
                   
                   {/* Enhanced Decorative Elements */}
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500" style={{transitionDelay: '0.2s'}}></div>
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200"></div>
+                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: '0.1s'}}></div>
                   
                   {/* Service Badge with Enhanced Animation */}
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-75 group-hover:scale-100">
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-200 transform scale-75 group-hover:scale-100">
                     <span className="text-xs text-white/80 font-medium">Service</span>
                   </div>
 
