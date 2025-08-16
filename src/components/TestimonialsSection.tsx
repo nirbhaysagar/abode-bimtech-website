@@ -320,132 +320,266 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* Enhanced Testimonials Grid - Mobile Responsive */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-6xl lg:max-w-7xl mx-auto">
-          {testimonials.map((testimonial, index) => {
-            const IconComponent = testimonial.icon;
-            
-            return (
-              <div 
-                key={index}
-                className="group relative cursor-pointer"
-              >
-                {/* Enhanced Testimonial Card - Modern Design */}
-                <div className={`group relative cursor-pointer`}>
-                  <div className={`bg-gradient-to-br from-card via-card/95 to-card/90 backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-apple hover:shadow-glow-xl transition-all duration-500 hover:transform hover:scale-[1.02] apple-fade-in border border-white/10 hover:border-primary/30 overflow-hidden relative`}
-                    style={{ animationDelay: `${index * 0.1}s` }}
+        {/* Enhanced Testimonials Grid - Horizontal Scrollable on Mobile */}
+        <div className="lg:grid lg:grid-cols-3 lg:gap-10 lg:max-w-7xl lg:mx-auto">
+          {/* Mobile: Horizontal Scrollable */}
+          <div className="lg:hidden overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4">
+            <div className="flex space-x-6 min-w-max">
+              {testimonials.map((testimonial, index) => {
+                const IconComponent = testimonial.icon;
+                
+                return (
+                  <div 
+                    key={index}
+                    className="group relative cursor-pointer flex-shrink-0"
+                    style={{ width: '320px' }}
                   >
-                    {/* Gradient Background Overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${testimonial.bgColor} opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
-                    
-                    {/* Decorative Corner Elements */}
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                    <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-secondary/10 to-transparent rounded-tr-full opacity-0 group-hover:opacity-100 transition-all duration-500" style={{transitionDelay: '0.2s'}}></div>
-                    
-                    {/* Enhanced Header with Modern Layout */}
-                    <div className="relative z-10 flex items-start space-x-4 mb-6">
-                      <div className={`relative w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br ${testimonial.color} rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-all duration-300`}>
-                        {testimonial.avatar}
-                        {/* Verified Badge */}
-                        {testimonial.verified && (
-                          <div className="absolute -top-1 -right-1 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
-                            <CheckCircle className="w-3 h-3 text-white" />
+                    {/* Enhanced Testimonial Card - Modern Design */}
+                    <div className={`group relative cursor-pointer`}>
+                      <div className={`bg-gradient-to-br from-card via-card/95 to-card/90 backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-apple hover:shadow-glow-xl transition-all duration-500 hover:transform hover:scale-[1.02] apple-fade-in border border-white/10 hover:border-primary/30 overflow-hidden relative`}
+                        style={{ animationDelay: `${index * 0.1}s` }}
+                      >
+                        {/* Gradient Background Overlay */}
+                        <div className={`absolute inset-0 bg-gradient-to-br ${testimonial.bgColor} opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
+                        
+                        {/* Decorative Corner Elements */}
+                        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                        <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-secondary/10 to-transparent rounded-tr-full opacity-0 group-hover:opacity-100 transition-all duration-500" style={{transitionDelay: '0.2s'}}></div>
+                        
+                        {/* Enhanced Header with Modern Layout */}
+                        <div className="relative z-10 flex items-start space-x-4 mb-6">
+                          <div className={`relative w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br ${testimonial.color} rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-all duration-300`}>
+                            {testimonial.avatar}
+                            {/* Verified Badge */}
+                            {testimonial.verified && (
+                              <div className="absolute -top-1 -right-1 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+                                <CheckCircle className="w-3 h-3 text-white" />
+                              </div>
+                            )}
                           </div>
-                        )}
-                      </div>
-                      
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <h4 className="font-bold text-card-foreground text-lg sm:text-xl group-hover:text-primary transition-colors duration-300 truncate">
-                            {testimonial.name}
-                          </h4>
+                          
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center space-x-2 mb-2">
+                              <h4 className="font-bold text-card-foreground text-lg sm:text-xl group-hover:text-primary transition-colors duration-300 truncate">
+                                {testimonial.name}
+                              </h4>
+                            </div>
+                            <p className="text-sm sm:text-base text-primary font-medium mb-1 group-hover:text-primary/80 transition-colors duration-300">
+                              {testimonial.company}
+                            </p>
+                            <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                              <MapPin className="w-3 h-3 flex-shrink-0" />
+                              <span className="truncate">{testimonial.location}</span>
+                            </div>
+                          </div>
+                          
+                          {/* Rating Stars - Top Right */}
+                          <div className="flex flex-col items-end space-y-2">
+                            <div className="flex items-center space-x-1">
+                              {[...Array(testimonial.rating)].map((_, i) => (
+                                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400 group-hover:scale-110 transition-transform duration-300" style={{transitionDelay: `${i * 0.1}s`}} />
+                              ))}
+                            </div>
+                            <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full">
+                              {testimonial.rating}.0
+                            </span>
+                          </div>
                         </div>
-                        <p className="text-sm sm:text-base text-primary font-medium mb-1 group-hover:text-primary/80 transition-colors duration-300">
-                          {testimonial.company}
+
+                        {/* Quote Icon with Enhanced Design */}
+                        <div className="absolute top-6 right-6 opacity-5 group-hover:opacity-20 transition-all duration-500">
+                          <div className="relative">
+                            <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
+                            <div className="absolute inset-0 w-8 h-8 sm:w-10 sm:h-10 bg-primary/20 rounded-full blur-sm group-hover:blur-md transition-all duration-500"></div>
+                          </div>
+                        </div>
+
+                        {/* Main Testimonial Text with Enhanced Typography */}
+                        <div className="relative z-10 mb-6">
+                          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300 italic">
+                            "{testimonial.text}"
+                          </p>
+                        </div>
+
+                        {/* Enhanced Project Info Section */}
+                        <div className="relative z-10 space-y-4">
+                          {/* Project Details */}
+                          <div className="grid grid-cols-2 gap-3 text-xs sm:text-sm">
+                            <div className="flex items-center space-x-2 p-2 bg-white/5 rounded-lg border border-white/10">
+                              <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
+                              <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 truncate">
+                                {testimonial.project}
+                              </span>
+                            </div>
+                            <div className="flex items-center space-x-2 p-2 bg-white/5 rounded-lg border border-white/10">
+                              <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
+                              <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                                {testimonial.duration}
+                              </span>
+                            </div>
+                          </div>
+                          
+                          {/* Services Tags with Enhanced Design */}
+                          <div className="flex flex-wrap gap-2">
+                            {testimonial.services.slice(0, 3).map((service, serviceIndex) => (
+                              <span key={serviceIndex} className="px-3 py-1.5 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full text-xs font-medium text-primary border border-primary/20 group-hover:border-primary/30 group-hover:bg-primary/15 transition-all duration-300">
+                                {service}
+                              </span>
+                            ))}
+                            {testimonial.services.length > 3 && (
+                              <span className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-muted-foreground border border-white/10">
+                                +{testimonial.services.length - 3} more
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Enhanced CTA Button */}
+                        <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                          <button className="w-full inline-flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-primary/10 to-primary/5 backdrop-blur-sm rounded-xl border border-primary/30 text-sm font-medium text-primary hover:from-primary hover:to-primary hover:text-white transition-all duration-300 hover:shadow-glow">
+                            <span>View Full Review</span>
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                          </button>
+                        </div>
+
+                        {/* Floating Decorative Elements */}
+                        <div className="absolute top-4 left-4 w-2 h-2 bg-gradient-to-r from-primary/60 to-primary/40 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+                        <div className="absolute bottom-4 right-4 w-1.5 h-1.5 bg-gradient-to-r from-secondary/60 to-secondary/40 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          
+          {/* Desktop: Grid Layout */}
+          <div className="hidden lg:grid lg:grid-cols-3 lg:gap-10">
+            {testimonials.map((testimonial, index) => {
+              const IconComponent = testimonial.icon;
+              
+              return (
+                <div 
+                  key={index}
+                  className="group relative cursor-pointer"
+                >
+                  {/* Enhanced Testimonial Card - Modern Design */}
+                  <div className={`group relative cursor-pointer`}>
+                    <div className={`bg-gradient-to-br from-card via-card/95 to-card/90 backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-apple hover:shadow-glow-xl transition-all duration-500 hover:transform hover:scale-[1.02] apple-fade-in border border-white/10 hover:border-primary/30 overflow-hidden relative`}
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {/* Gradient Background Overlay */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${testimonial.bgColor} opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
+                      
+                      {/* Decorative Corner Elements */}
+                      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                      <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-secondary/10 to-transparent rounded-tr-full opacity-0 group-hover:opacity-100 transition-all duration-500" style={{transitionDelay: '0.2s'}}></div>
+                      
+                      {/* Enhanced Header with Modern Layout */}
+                      <div className="relative z-10 flex items-start space-x-4 mb-6">
+                        <div className={`relative w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br ${testimonial.color} rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-all duration-300`}>
+                          {testimonial.avatar}
+                          {/* Verified Badge */}
+                          {testimonial.verified && (
+                            <div className="absolute -top-1 -right-1 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+                              <CheckCircle className="w-3 h-3 text-white" />
+                            </div>
+                          )}
+                        </div>
+                        
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <h4 className="font-bold text-card-foreground text-lg sm:text-xl group-hover:text-primary transition-colors duration-300 truncate">
+                              {testimonial.name}
+                            </h4>
+                          </div>
+                          <p className="text-sm sm:text-base text-primary font-medium mb-1 group-hover:text-primary/80 transition-colors duration-300">
+                            {testimonial.company}
+                          </p>
+                          <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                            <MapPin className="w-3 h-3 flex-shrink-0" />
+                            <span className="truncate">{testimonial.location}</span>
+                          </div>
+                        </div>
+                        
+                        {/* Rating Stars - Top Right */}
+                        <div className="flex flex-col items-end space-y-2">
+                          <div className="flex items-center space-x-1">
+                            {[...Array(testimonial.rating)].map((_, i) => (
+                              <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400 group-hover:scale-110 transition-transform duration-300" style={{transitionDelay: `${i * 0.1}s`}} />
+                            ))}
+                          </div>
+                          <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full">
+                            {testimonial.rating}.0
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Quote Icon with Enhanced Design */}
+                      <div className="absolute top-6 right-6 opacity-5 group-hover:opacity-20 transition-all duration-500">
+                        <div className="relative">
+                          <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
+                          <div className="absolute inset-0 w-8 h-8 sm:w-10 sm:h-10 bg-primary/20 rounded-full blur-sm group-hover:blur-md transition-all duration-500"></div>
+                        </div>
+                      </div>
+
+                      {/* Main Testimonial Text with Enhanced Typography */}
+                      <div className="relative z-10 mb-6">
+                        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300 italic">
+                          "{testimonial.text}"
                         </p>
-                        <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-                          <MapPin className="w-3 h-3 flex-shrink-0" />
-                          <span className="truncate">{testimonial.location}</span>
-                        </div>
                       </div>
-                      
-                      {/* Rating Stars - Top Right */}
-                      <div className="flex flex-col items-end space-y-2">
-                        <div className="flex items-center space-x-1">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400 group-hover:scale-110 transition-transform duration-300" style={{transitionDelay: `${i * 0.1}s`}} />
+
+                      {/* Enhanced Project Info Section */}
+                      <div className="relative z-10 space-y-4">
+                        {/* Project Details */}
+                        <div className="grid grid-cols-2 gap-3 text-xs sm:text-sm">
+                          <div className="flex items-center space-x-2 p-2 bg-white/5 rounded-lg border border-white/10">
+                            <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
+                            <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 truncate">
+                              {testimonial.project}
+                            </span>
+                          </div>
+                          <div className="flex items-center space-x-2 p-2 bg-white/5 rounded-lg border border-white/10">
+                            <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
+                            <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                              {testimonial.duration}
+                            </span>
+                          </div>
+                        </div>
+                        
+                        {/* Services Tags with Enhanced Design */}
+                        <div className="flex flex-wrap gap-2">
+                          {testimonial.services.slice(0, 3).map((service, serviceIndex) => (
+                            <span key={serviceIndex} className="px-3 py-1.5 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full text-xs font-medium text-primary border border-primary/20 group-hover:border-primary/30 group-hover:bg-primary/15 transition-all duration-300">
+                              {service}
+                            </span>
                           ))}
-                        </div>
-                        <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full">
-                          {testimonial.rating}.0
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Quote Icon with Enhanced Design */}
-                    <div className="absolute top-6 right-6 opacity-5 group-hover:opacity-20 transition-all duration-500">
-                      <div className="relative">
-                        <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
-                        <div className="absolute inset-0 w-8 h-8 sm:w-10 sm:h-10 bg-primary/20 rounded-full blur-sm group-hover:blur-md transition-all duration-500"></div>
-                      </div>
-                    </div>
-
-                    {/* Main Testimonial Text with Enhanced Typography */}
-                    <div className="relative z-10 mb-6">
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300 italic">
-                        "{testimonial.text}"
-                      </p>
-                    </div>
-
-                    {/* Enhanced Project Info Section */}
-                    <div className="relative z-10 space-y-4">
-                      {/* Project Details */}
-                      <div className="grid grid-cols-2 gap-3 text-xs sm:text-sm">
-                        <div className="flex items-center space-x-2 p-2 bg-white/5 rounded-lg border border-white/10">
-                          <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
-                          <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 truncate">
-                            {testimonial.project}
-                          </span>
-                        </div>
-                        <div className="flex items-center space-x-2 p-2 bg-white/5 rounded-lg border border-white/10">
-                          <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
-                          <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                            {testimonial.duration}
-                          </span>
+                          {testimonial.services.length > 3 && (
+                            <span className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-muted-foreground border border-white/10">
+                              +{testimonial.services.length - 3} more
+                            </span>
+                          )}
                         </div>
                       </div>
-                      
-                      {/* Services Tags with Enhanced Design */}
-                      <div className="flex flex-wrap gap-2">
-                        {testimonial.services.slice(0, 3).map((service, serviceIndex) => (
-                          <span key={serviceIndex} className="px-3 py-1.5 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full text-xs font-medium text-primary border border-primary/20 group-hover:border-primary/30 group-hover:bg-primary/15 transition-all duration-300">
-                            {service}
-                          </span>
-                        ))}
-                        {testimonial.services.length > 3 && (
-                          <span className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-muted-foreground border border-white/10">
-                            +{testimonial.services.length - 3} more
-                          </span>
-                        )}
+
+                      {/* Enhanced CTA Button */}
+                      <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                        <button className="w-full inline-flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-primary/10 to-primary/5 backdrop-blur-sm rounded-xl border border-primary/30 text-sm font-medium text-primary hover:from-primary hover:to-primary hover:text-white transition-all duration-300 hover:shadow-glow">
+                          <span>View Full Review</span>
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        </button>
                       </div>
-                    </div>
 
-                    {/* Enhanced CTA Button */}
-                    <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
-                      <button className="w-full inline-flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-primary/10 to-primary/5 backdrop-blur-sm rounded-xl border border-primary/30 text-sm font-medium text-primary hover:from-primary hover:to-primary hover:text-white transition-all duration-300 hover:shadow-glow">
-                        <span>View Full Review</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                      </button>
+                      {/* Floating Decorative Elements */}
+                      <div className="absolute top-4 left-4 w-2 h-2 bg-gradient-to-r from-primary/60 to-primary/40 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+                      <div className="absolute bottom-4 right-4 w-1.5 h-1.5 bg-gradient-to-r from-secondary/60 to-secondary/40 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.5s'}}></div>
                     </div>
-
-                    {/* Floating Decorative Elements */}
-                    <div className="absolute top-4 left-4 w-2 h-2 bg-gradient-to-r from-primary/60 to-primary/40 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
-                    <div className="absolute bottom-4 right-4 w-1.5 h-1.5 bg-gradient-to-r from-secondary/60 to-secondary/40 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse" style={{animationDelay: '0.5s'}}></div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
 
         {/* Enhanced CTA Section - Modern Design */}
