@@ -70,14 +70,20 @@ const HeroSection = () => {
 
       {/* Enhanced Content with Better Typography and Layout */}
       <div className="relative z-10 container mx-auto px-6 text-center text-white hero-content">
-        {/* Enhanced Subtitle */}
+        {/* Enhanced Subtitle with Apple-style Gradient Running Effect on Button Border */}
         <div className="mb-12 apple-slide-up">
-          <div className="inline-flex items-center space-x-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-            <p className="text-lg text-white/90 font-light tracking-wide">
-              BIM outsourcing in USA, UK, EU & UAE
-            </p>
-            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+          <div className="relative inline-flex">
+            {/* Animated Gradient Border Container */}
+            <div className="relative rounded-full p-[2px] bg-gradient-to-r from-blue-400 via-purple-500 via-pink-500 to-blue-400 bg-[length:400%_400%] animate-gradient-flow">
+              {/* Button Content */}
+              <div className="flex items-center space-x-3 px-6 py-3 bg-black/20 backdrop-blur-md rounded-full">
+                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                <p className="text-lg text-white/90 font-light tracking-wide">
+                  BIM outsourcing in USA, UK, EU & UAE
+                </p>
+                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+              </div>
+            </div>
           </div>
         </div>
 
