@@ -82,11 +82,7 @@ const Navigation = () => {
                   : "bg-white/10 text-white hover:bg-white/20"
               }`}
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              <Menu className="w-6 h-6" />
             </button>
           </div>
         </div>
