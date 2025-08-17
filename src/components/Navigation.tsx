@@ -47,14 +47,14 @@ const Navigation = () => {
           ? "glass shadow-apple" 
           : "bg-transparent"
       }`}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-8 py-2 sm:py-3 lg:py-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center ml-[120px]">
+            <div className="flex items-center ml-0 sm:ml-6 lg:ml-[120px]">
               <img 
                 src="/logo.png" 
                 alt="Abode Bimtech Logo" 
-                className="h-24 w-auto sm:h-30 lg:h-36 xl:h-42 transition-all duration-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+                className="h-12 w-auto sm:h-16 lg:h-24 xl:h-28 transition-all duration-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
               />
             </div>
             
@@ -78,13 +78,13 @@ const Navigation = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-2 rounded-lg transition-all duration-300 ${
+              className={`lg:hidden p-1.5 sm:p-2 rounded-lg transition-all duration-300 ${
                 isScrolled 
                   ? "bg-white/10 text-foreground hover:bg-white/20" 
                   : "bg-white/10 text-white hover:bg-white/20"
               }`}
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
         </div>
@@ -100,17 +100,17 @@ const Navigation = () => {
           />
           
           {/* Menu Content */}
-          <div className="absolute top-0 right-0 w-80 h-full bg-black/95 backdrop-blur-xl border-l border-white/10 p-6">
+          <div className="absolute top-0 right-0 w-full sm:w-80 h-full bg-black/95 backdrop-blur-xl border-l border-white/10 p-4 sm:p-6">
             <div className="flex flex-col h-full">
               {/* Navigation Items */}
-              <div className="flex-1 space-y-4 pt-8">
+              <div className="flex-1 space-y-3 sm:space-y-4 pt-6 sm:pt-8">
                 {navItems.map((item) => (
                   <button
                     key={item.sectionId}
                     onClick={() => scrollToSection(item.sectionId)}
-                    className="w-full text-left p-4 rounded-xl bg-white/5 hover:bg-white/10 text-white/90 hover:text-white transition-all duration-300 border border-white/5 hover:border-white/10"
+                    className="w-full text-left p-3 sm:p-4 rounded-xl bg-white/5 hover:bg-white/10 text-white/90 hover:text-white transition-all duration-300 border border-white/5 hover:border-white/10"
                   >
-                    <span className="text-lg font-medium tracking-wide">{item.label}</span>
+                    <span className="text-base sm:text-lg font-medium tracking-wide">{item.label}</span>
                   </button>
                 ))}
               </div>
@@ -122,7 +122,7 @@ const Navigation = () => {
                     <img 
                       src="/logo.png" 
                       alt="Abode Bimtech Logo" 
-                      className="h-24 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+                      className="h-12 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
                     />
                   </div>
                   <p className="text-white/60">Transforming BIM Services</p>
