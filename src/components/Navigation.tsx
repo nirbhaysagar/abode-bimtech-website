@@ -50,10 +50,12 @@ const Navigation = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className={`text-xl sm:text-2xl font-semibold tracking-tight ${
-              isScrolled ? "text-foreground" : "text-white"
-            }`}>
-              ABODE BIMTECH
+            <div className="flex items-center ml-[120px]">
+              <img 
+                src="/logo.png" 
+                alt="Abode Bimtech Logo" 
+                className="h-24 w-auto sm:h-30 lg:h-36 xl:h-42 transition-all duration-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+              />
             </div>
             
             {/* Desktop Navigation */}
@@ -116,8 +118,14 @@ const Navigation = () => {
               {/* Bottom Info */}
               <div className="pt-6 border-t border-white/10">
                 <div className="text-center text-white/60 text-sm">
-                  <p className="font-medium">Abode Bimtech</p>
-                  <p className="mt-1">Transforming BIM Services</p>
+                  <div className="flex items-center justify-center mb-3">
+                    <img 
+                      src="/logo.png" 
+                      alt="Abode Bimtech Logo" 
+                      className="h-24 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+                    />
+                  </div>
+                  <p className="text-white/60">Transforming BIM Services</p>
                 </div>
               </div>
             </div>

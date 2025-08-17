@@ -124,7 +124,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 overflow-hidden">
+    <section ref={sectionRef} id="contact" className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-600/20"></div>
