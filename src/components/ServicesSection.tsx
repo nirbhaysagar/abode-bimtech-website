@@ -242,15 +242,15 @@ const ServicesSection = () => {
                         {service.description}
                       </p>
 
-                      {/* Interactive Stats - Auto Show with Delay */}
-                      <div className="grid grid-cols-3 gap-2 lg:gap-3 mb-4 lg:mb-6 opacity-0 apple-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
-                        {Object.entries(service.stats).map(([key, value], statIndex) => (
-                          <div key={key} className="text-center p-2 lg:p-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                            <div className="text-sm lg:text-base font-bold text-blue-200">{value}</div>
-                            <div className="text-xs lg:text-sm text-white/60 capitalize">{key}</div>
-                          </div>
-                        ))}
-                      </div>
+                    {/* Interactive Stats - Auto Show with Delay */}
+                    <div className="flex flex-wrap justify-center gap-3 mb-4 lg:mb-6 opacity-0 apple-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
+                      {Object.entries(service.stats).map(([key, value], statIndex) => (
+                        <div key={key} className="inline-flex items-center space-x-2 px-3 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                          <span className="text-sm lg:text-base font-bold text-blue-200">{value}</span>
+                          <span className="text-xs lg:text-sm text-white/60 capitalize">{key}</span>
+                        </div>
+                      ))}
+                    </div>
                       
                       {/* Features List with Enhanced Animation - Auto Show with Delay */}
                       <div className="space-y-2 lg:space-y-3 mb-4 lg:mb-6">

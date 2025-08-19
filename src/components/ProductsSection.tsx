@@ -214,11 +214,11 @@ const ProductsSection = () => {
                       </p>
 
                       {/* Interactive Stats */}
-                      <div className="grid grid-cols-3 gap-2 lg:gap-3 mb-4 lg:mb-6">
+                      <div className="flex flex-wrap justify-center gap-3 mb-4 lg:mb-6">
                         {Object.entries(product.stats).map(([key, value], statIndex) => (
-                          <div key={key} className="text-center p-2 lg:p-3 bg-muted/50 backdrop-blur-sm rounded-lg border border-border/20">
-                            <div className="text-sm lg:text-base font-bold text-primary">{value}</div>
-                            <div className="text-xs lg:text-sm text-muted-foreground capitalize">{key}</div>
+                          <div key={key} className="inline-flex items-center space-x-2 px-3 py-2 bg-muted/50 backdrop-blur-sm rounded-full border border-border/20">
+                            <span className="text-sm lg:text-base font-bold text-primary">{value}</span>
+                            <span className="text-xs lg:text-sm text-muted-foreground capitalize">{key}</span>
                           </div>
                         ))}
                       </div>
