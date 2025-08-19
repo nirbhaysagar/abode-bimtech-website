@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 
 const ServicesSection = () => {
-  const [hoveredService, setHoveredService] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -105,7 +104,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="services" className="py-16 sm:py-20 lg:py-32 text-white animate-on-scroll relative overflow-hidden">
+    <section ref={sectionRef} id="services" className="py-20 sm:py-24 lg:py-28 xl:py-32 text-white animate-on-scroll relative overflow-hidden">
       {/* Enhanced Background with Multiple Layers */}
       <div className="absolute inset-0 apple-gradient"></div>
       
@@ -114,58 +113,58 @@ const ServicesSection = () => {
       
       {/* Enhanced Floating Elements with Parallax */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-blue-500/5 rounded-full blur-2xl sm:blur-3xl animate-float parallax"></div>
-        <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-10 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-purple-500/5 rounded-full blur-2xl sm:blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-blue-400/5 rounded-full blur-2xl sm:blur-3xl animate-float parallax" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 xl:w-72 xl:h-72 bg-blue-500/5 rounded-full blur-2xl sm:blur-3xl animate-float parallax"></div>
+        <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-10 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 xl:w-[24rem] xl:h-[24rem] bg-purple-500/5 rounded-full blur-2xl sm:blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-88 xl:h-88 bg-blue-400/5 rounded-full blur-2xl sm:blur-3xl animate-float parallax" style={{animationDelay: '4s'}}></div>
         
         {/* Floating Geometric Shapes */}
-        <div className="absolute top-16 sm:top-32 right-16 sm:right-32 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 border border-white/20 rounded-lg rotate-45 animate-float"></div>
-        <div className="absolute bottom-16 sm:bottom-32 left-16 sm:left-32 w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 bg-white/10 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/3 right-1/4 w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 border-2 border-white/30 transform rotate-12 animate-float" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-16 sm:top-32 right-16 sm:right-32 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-18 xl:h-18 border border-white/20 rounded-lg rotate-45 animate-float"></div>
+        <div className="absolute bottom-16 sm:bottom-32 left-16 sm:left-32 w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 xl:w-14 xl:h-14 bg-white/10 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/3 right-1/4 w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 xl:w-10 xl:h-10 border-2 border-white/30 transform rotate-12 animate-float" style={{animationDelay: '3s'}}></div>
         
         {/* Interactive Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.05]">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
-            backgroundSize: '20px 20px sm:40px 40px'
+            backgroundSize: '20px 20px sm:40px 40px lg:60px 60px xl:70px 70px'
           }}></div>
         </div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 relative z-10">
         {/* Enhanced Header Section */}
-        <div className="text-center mb-16 sm:mb-20 lg:mb-24">
-          <div className="inline-flex items-center space-x-2 sm:space-x-3 px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-6 sm:mb-8 hover:scale-105 transition-transform duration-300 cursor-pointer group">
-            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full group-hover:animate-pulse"></div>
-            <span className="text-white/80 font-medium tracking-wide text-sm sm:text-base">WHAT WE OFFER</span>
-            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full group-hover:animate-pulse"></div>
+        <div className="text-center mb-16 sm:mb-20 lg:mb-24 xl:mb-28">
+          <div className="inline-flex items-center space-x-3 sm:space-x-4 px-5 sm:px-6 py-3 sm:py-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 sm:mb-10 hover:scale-105 transition-transform duration-300 cursor-pointer group">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full group-hover:animate-pulse"></div>
+            <span className="text-white/80 font-medium tracking-wide text-base sm:text-lg">WHAT WE OFFER</span>
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full group-hover:animate-pulse"></div>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 lg:mb-10 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 sm:mb-10 lg:mb-12 tracking-tight">
             <span className="bg-gradient-to-r from-blue-200 via-white to-purple-200 bg-clip-text text-transparent">
               OUR SERVICES
             </span>
           </h2>
           
-          <div className="w-16 sm:w-20 lg:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-6 sm:mb-8 rounded-full hover:w-20 sm:hover:w-24 lg:hover:w-32 transition-all duration-500"></div>
+          <div className="w-20 sm:w-24 lg:w-28 xl:w-32 h-1 sm:h-1.5 lg:h-2 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-8 sm:mb-10 lg:mb-12 rounded-full hover:w-24 sm:hover:w-28 lg:hover:w-32 xl:hover:w-36 transition-all duration-500"></div>
           
-          <p className="text-base sm:text-lg lg:text-xl text-white/90 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light tracking-wide px-4 sm:px-6">
+          <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white/90 max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto leading-relaxed font-light tracking-wide px-6 sm:px-8">
             We are a one-stop-shop for MEP, architecture and engineering firms. From 3D BIM to point cloud to BIM services, 
             CAD services, Scan to BIM, Revit BIM services, Revit family creation services and final shop drawings, we deliver 
             intelligent solutions that capture every aspect of your design and build through enhanced construction documentation.
           </p>
 
           {/* Interactive Stats Bar - Mobile Responsive */}
-          <div className="grid grid-cols-2 lg:flex lg:justify-center lg:items-center gap-6 lg:gap-8 mt-8 sm:mt-10 lg:mt-12 max-w-2xl lg:max-w-none mx-auto">
+          <div className="grid grid-cols-2 lg:flex lg:justify-center lg:items-center gap-8 lg:gap-12 mt-12 sm:mt-16 lg:mt-20 max-w-3xl lg:max-w-none mx-auto">
             {stats.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
                 <div key={index} className="text-center group cursor-pointer">
-                  <div className="text-2xl sm:text-3xl font-bold text-blue-200 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-blue-200 group-hover:scale-110 transition-transform duration-300">
                     {stat.number}
                   </div>
-                  <div className="text-xs sm:text-sm text-white/70 flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1">
-                    <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 text-blue-300" />
+                  <div className="text-sm sm:text-base lg:text-lg xl:text-xl text-white/70 flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 lg:space-x-3">
+                    <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 text-blue-300" />
                     <span className="text-center">{stat.label}</span>
                   </div>
                 </div>
@@ -175,117 +174,109 @@ const ServicesSection = () => {
         </div>
 
         {/* Enhanced Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 max-w-6xl lg:max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 max-w-6xl lg:max-w-7xl xl:max-w-8xl mx-auto">
           {services.map((service, index) => {
             const IconComponent = service.icon;
-            const isHovered = hoveredService === index;
             
             return (
               <div 
                 key={index} 
-                className="group relative"
+                className="relative"
                 style={{ animationDelay: `${index * 0.2}s` }}
-                onMouseEnter={() => setHoveredService(index)}
-                onMouseLeave={() => setHoveredService(null)}
               >
                 {/* Enhanced Service Card */}
-                <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 shadow-apple hover:shadow-glow transition-all duration-500 hover:transform hover:scale-105 overflow-hidden cursor-pointer">
+                <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-7 sm:p-9 lg:p-11 xl:p-13 border border-white/10 shadow-apple transition-all duration-500 overflow-hidden min-h-[660px] sm:min-h-[715px] lg:min-h-[770px] xl:min-h-[825px]">
                   
-                  {/* Hover Effect Overlay */}
-                  <div className={`absolute inset-0 ${service.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                  {/* Background Overlay - Auto Show with Delay */}
+                  <div className={`absolute inset-0 ${service.bgColor} opacity-0 apple-fade-in`} style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}></div>
                   
                   {/* Enhanced Icon Container */}
-                  <div className={`relative z-10 w-32 h-32 sm:w-40 sm:h-40 glass rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-6 sm:mb-8 lg:mb-10 group-hover:shadow-glow transition-all duration-500 border border-white/20 overflow-hidden`}>
+                  <div className={`relative z-10 w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 glass rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-7 sm:mb-9 lg:mb-11 transition-all duration-500 border border-white/20 overflow-hidden mt-8 sm:mt-10 lg:mt-12`}>
                     {/* Icon Background Glow */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.iconBg} rounded-2xl sm:rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-60`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.iconBg} rounded-2xl sm:rounded-3xl blur-xl transition-all duration-500 opacity-60`}></div>
                     
                     {/* Icon */}
-                    <IconComponent className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-white relative z-10 group-hover:scale-110 transition-transform duration-500" />
+                    <IconComponent className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 text-white relative z-10 transition-transform duration-500" />
                     
                     {/* Enhanced Particle System */}
-                    <div className="absolute top-2 right-2 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                    <div className="absolute bottom-2 left-2 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                    <div className="absolute top-1/2 left-2 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-300 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                    <div className="absolute top-1/2 right-2 w-0.5 h-0.5 sm:w-1 sm:h-1 bg-purple-300 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                    <div className="absolute top-2 right-2 w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-blue-400 rounded-full animate-pulse"></div>
+                    <div className="absolute bottom-2 left-2 w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                    <div className="absolute top-1/2 left-2 w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-3 lg:h-3 bg-blue-300 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="absolute top-1/2 right-2 w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 bg-purple-300 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
                     
-                    {/* Sparkle Effect on Hover */}
-                    {isHovered && (
-                      <>
-                        <Sparkles className="absolute -top-2 -right-2 w-4 h-4 sm:w-6 sm:h-6 text-yellow-300 animate-ping" />
-                        <Zap className="absolute -bottom-2 -left-2 w-3 h-3 sm:w-5 sm:h-5 text-blue-300 animate-pulse" />
-                      </>
-                    )}
+                    {/* Sparkle Effect - Auto Show with Delay */}
+                    <Sparkles className="absolute -top-2 -right-2 w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 text-yellow-300 animate-ping opacity-0 apple-fade-in" style={{animationDelay: '1.2s', animationFillMode: 'forwards'}} />
+                    <Zap className="absolute -bottom-2 -left-2 w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 text-blue-300 animate-pulse opacity-0 apple-fade-in" style={{animationDelay: '1.3s', animationFillMode: 'forwards'}} />
                   </div>
                   
                   {/* Enhanced Content with Progressive Disclosure */}
                   <div className="relative z-10 text-center">
-                    {/* Category Badge */}
-                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                      <Target className="w-3 h-3 text-blue-300" />
-                      <span className="text-xs text-white/80 font-medium">{service.category}</span>
+                    {/* Category Badge - Auto Show with Delay */}
+                    <div className="inline-flex items-center space-x-2 px-3 py-2 lg:px-4 lg:py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-4 lg:mb-6 opacity-0 apple-fade-in" style={{animationDelay: '0.3s', animationFillMode: 'forwards'}}>
+                      <Target className="w-3 h-3 lg:w-4 lg:h-4 text-blue-300" />
+                      <span className="text-sm lg:text-base text-white/80 font-medium">{service.category}</span>
                     </div>
                     
-                    <h3 className="text-2xl font-bold mb-4 tracking-tight text-white group-hover:text-blue-200 transition-colors duration-200">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-6 tracking-tight text-white transition-colors duration-200">
                       {service.title}
                     </h3>
                     
-                    {/* Difficulty Indicator */}
-                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/10 rounded-full mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0" style={{transitionDelay: '0.05s'}}>
-                      <TrendingUp className="w-3 h-3 text-white/60" />
-                      <span className="text-xs text-white/60 font-medium">{service.difficulty}</span>
+                    {/* Difficulty Indicator - Auto Show with Delay */}
+                    <div className="inline-flex items-center space-x-2 px-3 py-2 lg:px-4 lg:py-2 bg-white/10 rounded-full mb-4 lg:mb-6 opacity-0 apple-fade-in" style={{animationDelay: '0.4s', animationFillMode: 'forwards'}}>
+                      <TrendingUp className="w-3 h-3 lg:w-4 lg:h-4 text-white/60" />
+                      <span className="text-sm lg:text-base text-white/60 font-medium">{service.difficulty}</span>
                     </div>
                     
-                    <p className="text-white/80 leading-relaxed font-light tracking-wide text-lg mb-6">
+                    <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white/80 leading-relaxed font-light tracking-wide mb-6 lg:mb-8">
                       {service.description}
                     </p>
 
-                    {/* Interactive Stats on Hover */}
-                    {isHovered && (
-                      <div className="grid grid-cols-3 gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform scale-95 group-hover:scale-100">
-                        {Object.entries(service.stats).map(([key, value], statIndex) => (
-                          <div key={key} className="text-center p-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                            <div className="text-xs font-bold text-blue-200">{value}</div>
-                            <div className="text-xs text-white/60 capitalize">{key}</div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                    {/* Interactive Stats - Auto Show with Delay */}
+                    <div className="grid grid-cols-3 gap-2 lg:gap-3 mb-4 lg:mb-6 opacity-0 apple-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
+                      {Object.entries(service.stats).map(([key, value], statIndex) => (
+                        <div key={key} className="text-center p-2 lg:p-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+                          <div className="text-base lg:text-lg font-bold text-blue-200">{value}</div>
+                          <div className="text-base lg:text-lg text-white/60 capitalize">{key}</div>
+                        </div>
+                      ))}
+                    </div>
                     
-                    {/* Features List with Enhanced Animation */}
-                    <div className="space-y-2 mb-4">
-                      <h4 className="text-xs font-semibold text-blue-200 uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    {/* Features List with Enhanced Animation - Auto Show with Delay */}
+                    <div className="space-y-2 lg:space-y-3 mb-4 lg:mb-6">
+                      <h4 className="text-base lg:text-lg font-semibold text-blue-200 uppercase tracking-wide mb-2 lg:mb-3 opacity-0 apple-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
                         Key Features
                       </h4>
                       {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2 text-xs text-white/70 group-hover:text-white transition-colors duration-200">
-                          <CheckCircle className="w-3 h-3 text-blue-300 opacity-0 group-hover:opacity-100 transition-all duration-200" />
-                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: `${featureIndex * 0.03}s`}}>
+                        <div key={featureIndex} className="flex items-center space-x-2 text-base lg:text-lg text-white/70 transition-colors duration-200">
+                          <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-blue-300 opacity-0 apple-fade-in" style={{animationDelay: `${0.5 + featureIndex * 0.05}s`, animationFillMode: 'forwards'}} />
+                          <span className="opacity-0 apple-fade-in" style={{animationDelay: `${0.5 + featureIndex * 0.05}s`, animationFillMode: 'forwards'}}>
                             {feature}
                           </span>
                         </div>
                       ))}
                     </div>
                     
-                    {/* Benefits List with Enhanced Animation */}
-                    <div className="space-y-2 mb-6">
-                      <h4 className="text-xs font-semibold text-blue-200 uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{transitionDelay: '0.1s'}}>
+                    {/* Benefits List with Enhanced Animation - Auto Show with Delay */}
+                    <div className="space-y-2 lg:space-y-3 mb-6 lg:mb-8">
+                      <h4 className="text-base lg:text-lg font-semibold text-blue-200 uppercase tracking-wide mb-2 lg:mb-3 opacity-0 apple-fade-in" style={{animationDelay: '0.6s', animationFillMode: 'forwards'}}>
                         Benefits
                       </h4>
                       {service.benefits.map((benefit, benefitIndex) => (
-                        <div key={benefitIndex} className="flex items-center space-x-2 text-xs text-white/70 group-hover:text-white transition-colors duration-200">
-                          <CheckCircle className="w-3 h-3 text-blue-300 opacity-0 group-hover:opacity-100 transition-all duration-200" />
-                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: `${0.15 + benefitIndex * 0.03}s`}}>
+                        <div key={benefitIndex} className="flex items-center space-x-2 text-base lg:text-lg text-white/70 transition-colors duration-200">
+                          <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-blue-300 opacity-0 apple-fade-in" style={{animationDelay: `${0.6 + benefitIndex * 0.05}s`, animationFillMode: 'forwards'}} />
+                          <span className="opacity-0 apple-fade-in" style={{animationDelay: `${0.6 + benefitIndex * 0.05}s`, animationFillMode: 'forwards'}}>
                             {benefit}
                           </span>
                         </div>
                       ))}
                     </div>
                     
-                    {/* Enhanced CTA Button */}
+                    {/* Enhanced CTA Button - Auto Show with Delay */}
                     <Button 
                       variant="outline" 
-                      size="sm"
-                      className="border-white/30 text-white hover:bg-white/10 group-hover:border-white transition-all duration-200 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 w-full hover:scale-105"
+                      size="default"
+                      className="border-white/30 text-white hover:bg-white/10 transition-all duration-200 opacity-0 apple-fade-in w-full hover:scale-105 px-7 py-4 text-lg lg:text-xl"
+                      style={{animationDelay: '0.7s', animationFillMode: 'forwards'}}
                     >
                       <span>{service.ctaText}</span>
                       <span className="ml-2">{service.ctaIcon}</span>
@@ -293,18 +284,18 @@ const ServicesSection = () => {
                     </Button>
                   </div>
                   
-                  {/* Enhanced Decorative Elements */}
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200"></div>
-                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: '0.1s'}}></div>
+                  {/* Enhanced Decorative Elements - Auto Show with Delay */}
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 apple-fade-in" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}></div>
+                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-0 apple-fade-in" style={{animationDelay: '0.9s', animationFillMode: 'forwards'}}></div>
                   
-                  {/* Service Badge with Enhanced Animation */}
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-200 transform scale-75 group-hover:scale-100">
+                  {/* Service Badge with Enhanced Animation - Auto Show with Delay */}
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 opacity-0 apple-fade-in" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
                     <span className="text-xs text-white/80 font-medium">Service</span>
                   </div>
 
-                  {/* Connection Lines to Other Cards */}
+                  {/* Connection Lines to Other Cards - Auto Show with Delay */}
                   {index < services.length - 1 && (
-                    <div className="absolute -right-8 top-1/2 w-16 h-0.5 bg-gradient-to-r from-blue-400/30 to-purple-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block"></div>
+                    <div className="absolute -right-8 top-1/2 w-16 h-0.5 bg-gradient-to-r from-blue-400/30 to-purple-400/30 opacity-0 apple-fade-in hidden md:block" style={{animationDelay: '1.1s', animationFillMode: 'forwards'}}></div>
                   )}
                 </div>
               </div>

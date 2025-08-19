@@ -147,7 +147,7 @@ const ContactSection = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label htmlFor="name" className="block text-white/80 text-sm font-medium mb-2">
                     Full Name
@@ -159,8 +159,9 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white/40 focus:ring-white/20"
+                    className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white/40 focus:ring-white/20 min-h-[48px] text-base"
                     placeholder="Enter your full name"
+                    aria-describedby="name-error"
                   />
                 </div>
                 <div>
@@ -174,8 +175,9 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white/40 focus:ring-white/20"
+                    className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white/40 focus:ring-white/20 min-h-[48px] text-base"
                     placeholder="Enter your email address"
+                    aria-describedby="email-error"
                   />
                 </div>
               </div>
@@ -191,8 +193,9 @@ const ContactSection = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white/40 focus:ring-white/20"
+                  className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white/40 focus:ring-white/20 min-h-[48px] text-base"
                   placeholder="What's this about?"
+                  aria-describedby="subject-error"
                 />
               </div>
 
@@ -207,8 +210,9 @@ const ContactSection = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white/40 focus:ring-white/20 resize-none"
+                  className="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white/40 focus:ring-white/20 resize-none min-h-[120px] text-base"
                   placeholder="Tell us about your project requirements..."
+                  aria-describedby="message-error"
                 />
               </div>
 
@@ -216,37 +220,35 @@ const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 text-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label={isSubmitting ? "Sending message..." : "Send message"}
               >
                 {isSubmitting ? (
-                  <div className="flex items-center space-x-2">
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    <span>Sending Message...</span>
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" aria-hidden="true"></div>
+                    <span>Sending...</span>
                   </div>
                 ) : (
-                  <div className="flex items-center space-x-2">
-                    <Send className="w-5 h-5" />
+                  <div className="flex items-center justify-center space-x-2">
+                    <Send className="w-5 h-5" aria-hidden="true" />
                     <span>Send Message</span>
                   </div>
                 )}
               </Button>
 
               {submitSuccess && (
-                <div className="bg-green-500/20 border border-green-500/40 rounded-lg p-4 text-center">
+                <div className="bg-green-500/20 border border-green-500/30 rounded-xl p-4 text-center" role="alert" aria-live="polite">
                   <div className="flex items-center justify-center space-x-2 text-green-400">
-                    <CheckCircle className="w-5 h-5" />
+                    <CheckCircle className="w-5 h-5" aria-hidden="true" />
                     <span className="font-medium">Message sent successfully!</span>
                   </div>
-                  <p className="text-green-300 text-sm mt-1">
-                    We'll get back to you within 24 hours.
-                  </p>
+                  <p className="text-green-300 text-sm mt-1">We'll get back to you within 24 hours.</p>
                 </div>
               )}
             </form>
           </div>
 
           {/* Office Image */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-700"></div>
+          <div className="relative">
             <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 hover:border-white/40 transition-all duration-500 overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-2xl"></div>
               <div className="relative z-10 text-center">
@@ -285,27 +287,49 @@ const ContactSection = () => {
                   <h3 className="text-3xl font-light text-white/90 tracking-wider">Get in Touch</h3>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4 group cursor-pointer">
-                      <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10">
+                      <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10" aria-hidden="true">
                         <Phone className="w-6 h-6 text-white/70" />
                       </div>
                       <div>
                         <p className="text-white/60 text-sm uppercase tracking-widest font-medium">Phone</p>
-                        <p className="text-white text-xl font-medium">+91 6396594184</p>
+                        <a 
+                          href="tel:+916396594184" 
+                          className="text-white text-xl font-medium hover:text-blue-200 transition-colors duration-300 block min-h-[44px] flex items-center"
+                          onClick={(e) => {
+                            // For mobile devices, this will open the phone app
+                            // For desktop, it will show a confirmation dialog
+                            if (!navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
+                              e.preventDefault();
+                              if (confirm('Call +91 6396594184?')) {
+                                window.open('tel:+916396594184', '_blank');
+                              }
+                            }
+                          }}
+                          aria-label="Call +91 6396594184"
+                        >
+                          +91 6396594184
+                        </a>
                       </div>
                     </div>
                     
                     <div className="flex items-center space-x-4 group cursor-pointer">
-                      <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10">
+                      <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10" aria-hidden="true">
                         <Mail className="w-6 h-6 text-white/70" />
                       </div>
                       <div>
                         <p className="text-white/60 text-sm uppercase tracking-widest font-medium">Email</p>
-                        <p className="text-white text-xl font-medium">abodebimtech@gmail.com</p>
+                        <a 
+                          href="mailto:abodebimtech@gmail.com" 
+                          className="text-white text-xl font-medium hover:text-blue-200 transition-colors duration-300 block min-h-[44px] flex items-center"
+                          aria-label="Send email to abodebimtech@gmail.com"
+                        >
+                          abodebimtech@gmail.com
+                        </a>
                       </div>
                     </div>
                     
                     <div className="flex items-center space-x-4 group cursor-pointer">
-                      <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10">
+                      <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 border border-white/5 group-hover:border-white/10" aria-hidden="true">
                         <MapPin className="w-6 h-6 text-white/70" />
                       </div>
                       <div>
@@ -322,13 +346,54 @@ const ContactSection = () => {
               <div className="lg:col-span-3 space-y-6">
                 <h3 className="text-2xl font-light text-white/90 tracking-wide">Quick Actions</h3>
                 <div className="space-y-3">
-                  <button className="w-full text-left py-3 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105">
+                  <a 
+                    href="tel:+916396594184"
+                    className="w-full text-left py-4 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105 block min-h-[56px] flex items-center"
+                    onClick={(e) => {
+                      // For mobile devices, this will open the phone app
+                      // For desktop, it will show a confirmation dialog
+                      if (!navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
+                        e.preventDefault();
+                        if (confirm('Call +91 6396594184?')) {
+                          window.open('tel:+916396594184', '_blank');
+                        }
+                      }
+                    }}
+                    aria-label="Call +91 6396594184"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-5 h-5 text-blue-300" aria-hidden="true" />
+                      <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-base font-medium">Call Now</span>
+                    </div>
+                  </a>
+                  <a 
+                    href="https://wa.me/916396594184?text=Hi%20Abode%20Bimtech,%20I%20would%20like%20to%20know%20more%20about%20your%20BIM%20services"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-left py-4 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105 block min-h-[56px] flex items-center"
+                    aria-label="Open WhatsApp chat with Abode Bimtech"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <MessageSquare className="w-5 h-5 text-green-400" aria-hidden="true" />
+                      <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-base font-medium">WhatsApp</span>
+                    </div>
+                  </a>
+                  <button 
+                    className="w-full text-left py-4 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105 min-h-[56px] flex items-center"
+                    aria-label="Get a quote for BIM services"
+                  >
                     <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-base font-medium">Get Quote</span>
                   </button>
-                  <button className="w-full text-left py-3 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105">
+                  <button 
+                    className="w-full text-left py-4 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105 min-h-[56px] flex items-center"
+                    aria-label="Book a consultation for BIM services"
+                  >
                     <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-base font-medium">Book Consultation</span>
                   </button>
-                  <button className="w-full text-left py-3 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105">
+                  <button 
+                    className="w-full text-left py-4 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105 min-h-[56px] flex items-center"
+                    aria-label="View Abode Bimtech portfolio"
+                  >
                     <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-base font-medium">View Portfolio</span>
                   </button>
                 </div>
@@ -337,7 +402,7 @@ const ContactSection = () => {
               {/* Right Section - Social & Stats */}
               <div className="lg:col-span-4 space-y-6">
                 <h3 className="text-2xl font-light text-white/90 tracking-wide">Connect</h3>
-                <div className="flex space-x-3">
+                <div className="flex flex-wrap gap-3 sm:gap-4">
                   {[
                     { icon: Linkedin, bg: 'bg-blue-600/20', hover: 'hover:bg-blue-600/30', border: 'border-blue-500/20' },
                     { icon: Twitter, bg: 'bg-sky-500/20', hover: 'hover:bg-sky-500/30', border: 'border-sky-500/20' },
@@ -349,23 +414,24 @@ const ContactSection = () => {
                       <a
                         key={index}
                         href="#"
-                        className={`w-12 h-12 ${social.bg} ${social.hover} ${social.border} rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 border hover:shadow-lg`}
+                        className={`w-12 h-12 sm:w-14 sm:h-14 ${social.bg} ${social.hover} ${social.border} rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 border hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white/20`}
+                        aria-label={`Follow us on ${social.icon.name || 'social media'}`}
                       >
-                        <IconComponent className="w-5 h-5 text-white/80" />
+                        <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white/80" aria-hidden="true" />
                       </a>
                     );
                   })}
                 </div>
                 
                 <div className="pt-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-4 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300 hover:scale-105">
-                      <p className="text-2xl font-bold text-white mb-2">500+</p>
-                      <p className="text-white/60 text-sm uppercase tracking-wider font-medium">Projects</p>
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                    <div className="text-center p-3 sm:p-4 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300 hover:scale-105">
+                      <p className="text-xl sm:text-2xl font-bold text-white mb-2">500+</p>
+                      <p className="text-white/60 text-xs sm:text-sm uppercase tracking-wider font-medium">Projects</p>
                     </div>
-                    <div className="text-center p-4 bg-white/5 rounded-xl border border-white/5 hover:border-white/10 hover:border-white/10 transition-all duration-300 hover:scale-105">
-                      <p className="text-2xl font-bold text-white mb-2">50+</p>
-                      <p className="text-white/60 text-sm uppercase tracking-wider font-medium">Clients</p>
+                    <div className="text-center p-3 sm:p-4 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300 hover:scale-105">
+                      <p className="text-xl sm:text-2xl font-bold text-white mb-2">50+</p>
+                      <p className="text-white/60 text-xs sm:text-sm uppercase tracking-wider font-medium">Clients</p>
                     </div>
                   </div>
                 </div>
@@ -384,7 +450,54 @@ const ContactSection = () => {
                 </p>
               </div>
               
-
+              {/* Floating Contact Button - Mobile Only */}
+              <div className="lg:hidden fixed bottom-6 right-6 z-50">
+                <div className="relative group">
+                  {/* Main Contact Button */}
+                  <button 
+                    className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-pulse focus:outline-none focus:ring-4 focus:ring-blue-300/50"
+                    onClick={() => {
+                      // Show contact options
+                      const contactOptions = [
+                        { label: 'Call Now', action: () => window.open('tel:+916396594184', '_blank') },
+                        { label: 'WhatsApp', action: () => window.open('https://wa.me/916396594184?text=Hi%20Abode%20Bimtech,%20I%20would%20like%20to%20know%20more%20about%20your%20BIM%20services', '_blank') },
+                        { label: 'Email', action: () => window.open('mailto:abodebimtech@gmail.com', '_blank') }
+                      ];
+                      
+                      // For mobile, show action sheet or use native sharing
+                      if (navigator.share) {
+                        navigator.share({
+                          title: 'Contact Abode Bimtech',
+                          text: 'Get in touch with Abode Bimtech for BIM services',
+                          url: window.location.href
+                        }).catch(() => {
+                          // Fallback if sharing fails
+                          const choice = prompt('Choose contact method:\n1. Call Now\n2. WhatsApp\n3. Email\n\nEnter 1, 2, or 3:');
+                          if (choice === '1') contactOptions[0].action();
+                          else if (choice === '2') contactOptions[1].action();
+                          else if (choice === '3') contactOptions[2].action();
+                        });
+                      } else {
+                        // Fallback: show alert with options
+                        const choice = prompt('Choose contact method:\n1. Call Now\n2. WhatsApp\n3. Email\n\nEnter 1, 2, or 3:');
+                        if (choice === '1') contactOptions[0].action();
+                        else if (choice === '2') contactOptions[1].action();
+                        else if (choice === '3') contactOptions[2].action();
+                      }
+                    }}
+                    aria-label="Quick contact options - Call, WhatsApp, or Email"
+                    title="Quick contact options"
+                  >
+                    <MessageSquare className="w-7 h-7 text-white" aria-hidden="true" />
+                  </button>
+                  
+                  {/* Tooltip */}
+                  <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-black/80 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+                    Contact Options
+                    <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black/80"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

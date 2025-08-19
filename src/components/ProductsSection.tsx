@@ -3,19 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 
 const ProductsSection = () => {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const sectionRef = useRef<HTMLElement>(null);
-
-  // Mouse tracking for magnetic effects
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   // Parallax scroll effect
   useEffect(() => {
@@ -96,212 +84,191 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="products" className="py-32 bg-background relative overflow-hidden">
+    <section ref={sectionRef} id="products" className="py-24 lg:py-28 xl:py-32 bg-background relative overflow-hidden">
       {/* Enhanced Background Elements with Parallax */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl parallax"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl parallax"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-green-500/5 rounded-full blur-3xl parallax"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 lg:w-[24rem] lg:h-[24rem] xl:w-96 xl:h-96 bg-blue-500/5 rounded-full blur-3xl parallax"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 lg:w-[20rem] lg:h-[20rem] xl:w-80 xl:h-80 bg-purple-500/5 rounded-full blur-3xl parallax"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 bg-green-500/5 rounded-full blur-3xl parallax"></div>
         
         {/* Floating Geometric Shapes */}
-        <div className="absolute top-32 right-32 w-16 h-16 border border-primary/20 rounded-lg rotate-45 animate-float parallax"></div>
-        <div className="absolute bottom-32 left-32 w-12 h-12 bg-primary/10 rounded-full animate-float parallax" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/3 right-1/4 w-8 h-8 border-2 border-primary/30 transform rotate-12 animate-float parallax" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-32 right-32 w-16 h-16 lg:w-18 lg:h-18 xl:w-20 xl:h-20 border border-primary/20 rounded-lg rotate-45 animate-float parallax"></div>
+        <div className="absolute bottom-32 left-32 w-12 h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 bg-primary/10 rounded-full animate-float parallax" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/3 right-1/4 w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 border-2 border-primary/30 transform rotate-12 animate-float parallax" style={{animationDelay: '2s'}}></div>
       </div>
 
       {/* Interactive Background Grid */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
+          backgroundSize: '40px 40px lg:50px 50px xl:60px 60px'
         }}></div>
       </div>
       
-      <div className="container mx-auto px-8 relative z-10">
+      <div className="container mx-auto px-8 lg:px-10 xl:px-12 relative z-10">
         {/* Enhanced Header Section with Interactive Elements */}
-        <div className="text-center mb-24">
-          <div className="inline-flex items-center space-x-3 px-6 py-3 bg-primary/10 backdrop-blur-md rounded-full border border-primary/20 mb-8 hover:scale-105 transition-transform duration-300 cursor-pointer group">
+        <div className="text-center mb-20 lg:mb-24 xl:mb-28">
+          <div className="inline-flex items-center space-x-3 px-6 py-3 bg-primary/10 backdrop-blur-md rounded-full border border-primary/20 mb-8 lg:mb-10 hover:scale-105 transition-transform duration-300 cursor-pointer group">
             <div className="w-2 h-2 bg-primary rounded-full group-hover:animate-pulse"></div>
-            <span className="text-primary font-medium tracking-wide">OUR SOLUTIONS</span>
+            <span className="text-primary font-medium tracking-wide text-base">OUR SOLUTIONS</span>
             <div className="w-2 h-2 bg-primary rounded-full group-hover:animate-pulse"></div>
           </div>
           
-          <h2 className="text-5xl md:text-6xl font-bold mb-10 tracking-tight text-foreground">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-10 lg:mb-12 tracking-tight text-foreground">
             <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
               PRODUCTS & SERVICES
             </span>
           </h2>
           
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-glow mx-auto mb-8 rounded-full hover:w-32 transition-all duration-500"></div>
+          <div className="w-24 lg:w-28 xl:w-32 h-1 lg:h-1.5 bg-gradient-to-r from-primary to-primary-glow mx-auto mb-8 lg:mb-10 rounded-full hover:w-28 lg:hover:w-32 xl:hover:w-36 transition-all duration-500"></div>
           
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto font-light tracking-wide leading-relaxed">
+          <p className="text-lg lg:text-xl xl:text-2xl text-muted-foreground max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto font-light tracking-wide leading-relaxed">
             Comprehensive BIM solutions designed to streamline your architectural and engineering workflows
           </p>
 
           {/* Interactive Stats Bar */}
-          <div className="flex justify-center items-center space-x-8 mt-12">
+          <div className="flex justify-center items-center space-x-10 lg:space-x-12 mt-12 lg:mt-16">
             <div className="text-center group cursor-pointer">
-              <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">500+</div>
-              <div className="text-sm text-muted-foreground">Projects Completed</div>
+              <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">500+</div>
+              <div className="text-sm lg:text-base xl:text-lg text-muted-foreground">Projects Completed</div>
             </div>
             <div className="text-center group cursor-pointer">
-              <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">99.9%</div>
-              <div className="text-sm text-muted-foreground">Accuracy Rate</div>
+              <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">99.9%</div>
+              <div className="text-sm lg:text-base xl:text-lg text-muted-foreground">Accuracy Rate</div>
             </div>
             <div className="text-center group cursor-pointer">
-              <div className="text-3xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">24/7</div>
-              <div className="text-sm text-muted-foreground">Support Available</div>
+              <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">24/7</div>
+              <div className="text-sm lg:text-base xl:text-lg text-muted-foreground">Support Available</div>
             </div>
           </div>
         </div>
 
         {/* Enhanced Products Grid with Magnetic Effects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10 xl:gap-12 max-w-7xl mx-auto">
           {products.map((product, index) => {
             const IconComponent = product.icon;
-            const isHovered = hoveredCard === index;
-            
-            // Calculate magnetic effect
-            const cardElement = document.getElementById(`card-${index}`);
-            const cardRect = cardElement?.getBoundingClientRect();
-            const cardCenterX = cardRect ? cardRect.left + cardRect.width / 2 : 0;
-            const cardCenterY = cardRect ? cardRect.top + cardRect.height / 2 : 0;
-            
-            const deltaX = (mousePosition.x - cardCenterX) * 0.02;
-            const deltaY = (mousePosition.y - cardCenterY) * 0.02;
             
             return (
               <div 
                 key={index} 
                 id={`card-${index}`}
-                className="group relative"
+                className="relative"
                 style={{ animationDelay: `${index * 0.1}s` }}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Enhanced Product Card with Magnetic Effect */}
                 <div 
-                  className="relative bg-white rounded-3xl p-8 border border-gray-100 shadow-apple hover:shadow-glow transition-all duration-500 hover:transform hover:scale-105 overflow-hidden group-hover:border-primary/20 cursor-pointer"
-                  style={{
-                    transform: isHovered ? `translate(${deltaX}px, ${deltaY}px)` : 'translate(0, 0)',
-                    transition: isHovered ? 'none' : 'all 0.5s ease'
-                  }}
+                  className="relative bg-white rounded-3xl p-9 lg:p-11 xl:p-13 border border-gray-100 shadow-apple transition-all duration-500 overflow-hidden min-h-[605px] lg:min-h-[660px] xl:min-h-[715px]"
                 >
                   
-                  {/* Hover Effect Overlay */}
-                  <div className={`absolute inset-0 ${product.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                  {/* Background Overlay - Auto Show with Delay */}
+                  <div className={`absolute inset-0 ${product.bgColor} opacity-0 apple-fade-in`} style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}></div>
                   
                   {/* Enhanced Icon Container with Particle System */}
-                  <div className={`relative z-10 w-32 h-32 bg-gradient-to-br ${product.color} rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:shadow-glow transition-all duration-500 shadow-apple overflow-hidden`}>
+                  <div className={`relative z-10 w-48 h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 bg-gradient-to-br ${product.color} rounded-2xl flex items-center justify-center mx-auto mb-9 lg:mb-11 transition-all duration-500 shadow-apple overflow-hidden mt-8 lg:mt-10 xl:mt-12`}>
                     {/* Icon Background Glow */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${product.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-60`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${product.color} rounded-2xl blur-xl transition-all duration-500 opacity-60`}></div>
                     
                     {/* Icon */}
-                    <IconComponent className="w-16 h-16 text-white relative z-10 group-hover:scale-110 transition-transform duration-500" />
+                    <IconComponent className="w-24 h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 text-white relative z-10 transition-transform duration-500" />
                     
                     {/* Enhanced Particle System */}
-                    <div className="absolute top-2 right-2 w-2 h-2 bg-white/80 rounded-full animate-pulse"></div>
-                    <div className="absolute bottom-2 left-2 w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                    <div className="absolute top-1/2 left-2 w-1.5 h-1.5 bg-white/40 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                    <div className="absolute top-1/2 right-2 w-1 h-1 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                    <div className="absolute top-2 right-2 w-2 h-2 lg:w-3 lg:h-3 bg-white/80 rounded-full animate-pulse"></div>
+                    <div className="absolute bottom-2 left-2 w-2 h-2 lg:w-3 lg:h-3 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                    <div className="absolute top-1/2 left-2 w-1.5 h-1.5 lg:w-2 lg:h-2 bg-white/40 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="absolute top-1/2 right-2 w-1 h-1 lg:w-1.5 lg:h-1.5 bg-white/60 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
                     
-                    {/* Sparkle Effect on Hover */}
-                    {isHovered && (
-                      <>
-                        <Sparkles className="absolute -top-2 -right-2 w-6 h-6 text-yellow-400 animate-ping" />
-                        <Zap className="absolute -bottom-2 -left-2 w-5 h-5 text-blue-400 animate-pulse" />
-                      </>
-                    )}
+                    {/* Sparkle Effect - Auto Show with Delay */}
+                    <Sparkles className="absolute -top-2 -right-2 w-6 h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 text-yellow-400 animate-ping opacity-0 apple-fade-in" style={{animationDelay: '1.2s', animationFillMode: 'forwards'}} />
+                    <Zap className="absolute -bottom-2 -left-2 w-5 h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 text-blue-400 animate-pulse opacity-0 apple-fade-in" style={{animationDelay: '1.3s', animationFillMode: 'forwards'}} />
                   </div>
                   
                   {/* Enhanced Content with Progressive Disclosure */}
                   <div className="relative z-10 text-center">
-                    {/* Category Badge */}
-                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                      <Target className="w-3 h-3 text-primary" />
-                      <span className="text-xs text-primary font-medium">{product.category}</span>
+                    {/* Category Badge - Auto Show with Delay */}
+                    <div className="inline-flex items-center space-x-2 px-3 py-2 lg:px-4 lg:py-2 bg-primary/10 rounded-full border border-primary/20 mb-4 lg:mb-6 opacity-0 apple-fade-in" style={{animationDelay: '0.3s', animationFillMode: 'forwards'}}>
+                      <Target className="w-3 h-3 lg:w-4 lg:h-4 text-primary" />
+                      <span className="text-sm lg:text-base text-primary font-medium">{product.category}</span>
                     </div>
                     
-                    <h3 className="text-2xl font-bold mb-4 text-foreground tracking-tight group-hover:text-primary transition-colors duration-200">
+                    <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 lg:mb-6 text-foreground tracking-tight transition-colors duration-200">
                       {product.title}
                     </h3>
                     
-                    {/* Difficulty Indicator */}
-                    <div className="inline-flex items-center space-x-2 px-3 py-1 bg-gray-100 rounded-full mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0" style={{transitionDelay: '0.05s'}}>
-                      <TrendingUp className="w-3 h-3 text-gray-600" />
-                      <span className="text-xs text-gray-600 font-medium">{product.difficulty}</span>
+                    {/* Difficulty Indicator - Auto Show with Delay */}
+                    <div className="inline-flex items-center space-x-2 px-3 py-2 lg:px-4 lg:py-2 bg-gray-100 rounded-full mb-4 lg:mb-6 opacity-0 apple-fade-in" style={{animationDelay: '0.4s', animationFillMode: 'forwards'}}>
+                      <TrendingUp className="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" />
+                      <span className="text-sm lg:text-base text-gray-600 font-medium">{product.difficulty}</span>
                     </div>
                     
-                    <p className="text-muted-foreground leading-relaxed text-sm mb-6 px-2">
+                    <p className="text-muted-foreground leading-relaxed text-base lg:text-lg xl:text-xl mb-6 lg:mb-8 px-3">
                       {product.description}
                     </p>
                     
-                    {/* Interactive Stats on Hover */}
-                    {isHovered && (
-                      <div className="grid grid-cols-3 gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-200 transform scale-95 group-hover:scale-100">
-                        {Object.entries(product.stats).map(([key, value], statIndex) => (
-                          <div key={key} className="text-center p-2 bg-white/50 backdrop-blur-sm rounded-lg border border-gray-200/50">
-                            <div className="text-xs font-bold text-primary">{value}</div>
-                            <div className="text-xs text-gray-600 capitalize">{key}</div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                    {/* Interactive Stats - Auto Show with Delay */}
+                    <div className="grid grid-cols-3 gap-2 lg:gap-3 mb-4 lg:mb-6 opacity-0 apple-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
+                      {Object.entries(product.stats).map(([key, value], statIndex) => (
+                        <div key={key} className="text-center p-2 lg:p-3 bg-white/50 backdrop-blur-sm rounded-lg border border-gray-200/50">
+                          <div className="text-base lg:text-lg font-bold text-primary">{value}</div>
+                          <div className="text-base lg:text-lg text-gray-600 capitalize">{key}</div>
+                        </div>
+                      ))}
+                    </div>
                     
-                    {/* Features List with Enhanced Animation */}
-                    <div className="space-y-2 mb-4">
-                      <h4 className="text-xs font-semibold text-primary uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    {/* Features List with Enhanced Animation - Auto Show with Delay */}
+                    <div className="space-y-2 lg:space-y-3 mb-4 lg:mb-6">
+                      <h4 className="text-base lg:text-lg font-semibold text-primary uppercase tracking-wide mb-2 lg:mb-3 opacity-0 apple-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
                         Key Features
                       </h4>
                       {product.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2 text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-200">
-                          <CheckCircle className="w-3 h-3 text-primary opacity-0 group-hover:opacity-100 transition-all duration-200" />
-                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: `${featureIndex * 0.03}s`}}>
+                        <div key={featureIndex} className="flex items-center space-x-2 text-base lg:text-lg text-muted-foreground transition-colors duration-200">
+                          <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-primary opacity-0 apple-fade-in" style={{animationDelay: `${0.5 + featureIndex * 0.05}s`, animationFillMode: 'forwards'}} />
+                          <span className="opacity-0 apple-fade-in" style={{animationDelay: `${0.5 + featureIndex * 0.05}s`, animationFillMode: 'forwards'}}>
                             {feature}
                           </span>
                         </div>
                       ))}
                     </div>
                     
-                    {/* Benefits List with Enhanced Animation */}
-                    <div className="space-y-2 mb-6">
-                      <h4 className="text-xs font-semibold text-primary uppercase tracking-wide mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{transitionDelay: '0.1s'}}>
+                    {/* Benefits List with Enhanced Animation - Auto Show with Delay */}
+                    <div className="space-y-2 lg:space-y-3 mb-6 lg:mb-8">
+                      <h4 className="text-base lg:text-lg font-semibold text-primary uppercase tracking-wide mb-2 lg:mb-3 opacity-0 apple-fade-in" style={{animationDelay: '0.6s', animationFillMode: 'forwards'}}>
                         Benefits
                       </h4>
                       {product.benefits.map((benefit, benefitIndex) => (
-                        <div key={benefitIndex} className="flex items-center space-x-2 text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-200">
-                          <CheckCircle className="w-3 h-3 text-primary opacity-0 group-hover:opacity-100 transition-all duration-200" />
-                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: `${0.15 + benefitIndex * 0.03}s`}}>
+                        <div key={benefitIndex} className="flex items-center space-x-2 text-base lg:text-lg text-muted-foreground transition-colors duration-200">
+                          <CheckCircle className="w-4 h-4 lg:w-5 lg:h-5 text-primary opacity-0 apple-fade-in" style={{animationDelay: `${0.6 + benefitIndex * 0.05}s`, animationFillMode: 'forwards'}} />
+                          <span className="opacity-0 apple-fade-in" style={{animationDelay: `${0.6 + benefitIndex * 0.05}s`, animationFillMode: 'forwards'}}>
                             {benefit}
                           </span>
                         </div>
                       ))}
                     </div>
                     
-                    {/* Enhanced CTA Button with Loading State */}
+                    {/* Enhanced CTA Button with Loading State - Auto Show with Delay */}
                     <Button 
                       variant="outline" 
-                      size="sm"
-                      className="border-primary/30 text-primary hover:bg-primary/10 group-hover:border-primary transition-all duration-200 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 w-full hover:scale-105"
+                      size="default"
+                      className="border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200 opacity-0 apple-fade-in w-full hover:scale-105 px-7 py-4 text-lg lg:text-xl"
+                      style={{animationDelay: '0.7s', animationFillMode: 'forwards'}}
                     >
                       <span>{product.ctaText}</span>
                       <span className="ml-2">{product.ctaIcon}</span>
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
                     </Button>
                   </div>
                   
-                  {/* Enhanced Decorative Elements */}
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-r from-primary/40 to-primary/60 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200"></div>
-                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-gradient-to-r from-primary/40 to-primary/60 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-200" style={{transitionDelay: '0.1s'}}></div>
+                  {/* Enhanced Decorative Elements - Auto Show with Delay */}
+                  <div className="absolute top-4 right-4 w-3 h-3 lg:w-4 lg:h-4 bg-gradient-to-r from-primary/40 to-primary/60 rounded-full opacity-0 apple-fade-in" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}></div>
+                  <div className="absolute bottom-4 left-4 w-2 h-2 lg:w-3 lg:h-3 bg-gradient-to-r from-primary/40 to-primary/60 rounded-full opacity-0 apple-fade-in" style={{animationDelay: '0.9s', animationFillMode: 'forwards'}}></div>
                   
-                  {/* Service Badge with Enhanced Animation */}
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-primary/10 backdrop-blur-md rounded-full border border-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-200 transform scale-75 group-hover:scale-100">
-                    <span className="text-xs text-primary font-medium">Service</span>
+                  {/* Service Badge with Enhanced Animation - Auto Show with Delay */}
+                  <div className="absolute top-4 left-4 px-3 py-2 lg:px-4 lg:py-2 bg-primary/10 backdrop-blur-md rounded-full border border-primary/20 opacity-0 apple-fade-in" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
+                    <span className="text-sm lg:text-base text-primary font-medium">Service</span>
                   </div>
 
-                  {/* Connection Lines to Other Cards */}
+                  {/* Connection Lines to Other Cards - Auto Show with Delay */}
                   {index < products.length - 1 && (
-                    <div className="absolute -right-4 top-1/2 w-8 h-0.5 bg-gradient-to-r from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden lg:block"></div>
+                    <div className="absolute -right-4 top-1/2 w-8 h-0.5 bg-gradient-to-r from-primary/30 to-transparent opacity-0 apple-fade-in hidden lg:block" style={{animationDelay: '1.1s', animationFillMode: 'forwards'}}></div>
                   )}
                 </div>
               </div>

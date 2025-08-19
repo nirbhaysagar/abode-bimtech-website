@@ -321,7 +321,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Enhanced Testimonials Grid - Horizontal Scrollable on Mobile */}
-        <div className="lg:grid lg:grid-cols-3 lg:gap-10 lg:max-w-7xl lg:mx-auto">
+        <div className="lg:max-w-7xl lg:mx-auto">
           {/* Mobile: Horizontal Scrollable */}
           <div className="lg:hidden overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4">
             <div className="flex space-x-6 min-w-max">
@@ -453,15 +453,16 @@ const TestimonialsSection = () => {
             </div>
           </div>
           
-          {/* Desktop: Grid Layout */}
-          <div className="hidden lg:grid lg:grid-cols-3 lg:gap-10">
+          {/* Desktop: Horizontal Row Layout */}
+          <div className="hidden lg:flex lg:space-x-8 lg:overflow-x-auto lg:scrollbar-hide lg:pb-4">
             {testimonials.map((testimonial, index) => {
               const IconComponent = testimonial.icon;
               
               return (
                 <div 
                   key={index}
-                  className="group relative cursor-pointer"
+                  className="group relative cursor-pointer flex-shrink-0"
+                  style={{ width: '380px' }}
                 >
                   {/* Enhanced Testimonial Card - Modern Design */}
                   <div className={`group relative cursor-pointer`}>

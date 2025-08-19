@@ -224,6 +224,11 @@
   .apple-scale-in {
     animation: appleScaleIn 0.5s ease-out;
   }
+
+  /* Auto-fade-in animation for service cards */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
 }
 
 /* Mobile-specific responsive adjustments */
@@ -268,6 +273,18 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Fade In animation for service cards */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
