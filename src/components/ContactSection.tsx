@@ -44,17 +44,39 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    
-    // Reset form after success
-    setTimeout(() => {
-      setSubmitSuccess(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 3000);
+    try {
+      // Send form data to Formspree
+      const response = await fetch('https://formspree.io/f/xwpqdnpg', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          formType: 'Contact Form'
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitSuccess(true);
+        // Reset form after success
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      // You can add error handling here if needed
+    } finally {
+      setIsSubmitting(false);
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitSuccess(false);
+      }, 5000);
+    }
   };
 
   const contactInfo = [
@@ -241,7 +263,7 @@ const ContactSection = () => {
                     <CheckCircle className="w-5 h-5" aria-hidden="true" />
                     <span className="font-medium">Message sent successfully!</span>
                   </div>
-                  <p className="text-green-300 text-sm mt-1">We'll get back to you within 24 hours.</p>
+                  <p className="text-green-300 text-sm mt-1">We've received your message and will reply to {formData.email} within 24 hours.</p>
                 </div>
               )}
             </form>

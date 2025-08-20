@@ -57,28 +57,47 @@ const QuoteRequestModal = ({ isOpen, onClose }: QuoteRequestModalProps) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Here you would typically send the data to your backend
-    console.log("Quote request submitted:", formData);
-    
-    setIsSubmitting(false);
-    onClose();
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      projectType: "",
-      projectSize: "",
-      timeline: "",
-      budget: "",
-      description: "",
-      services: []
-    });
+    try {
+      // Send form data to Formspree
+      const response = await fetch('https://formspree.io/f/xwpqdnpg', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          formType: 'Quote Request',
+          submittedAt: new Date().toISOString()
+        }),
+      });
+
+      if (response.ok) {
+        // Success - close modal and show success message
+        alert('Quote request submitted successfully! We will contact you at ' + formData.email + ' within 24 hours.');
+        onClose();
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          projectType: "",
+          projectSize: "",
+          timeline: "",
+          budget: "",
+          description: "",
+          services: []
+        });
+      } else {
+        throw new Error('Failed to submit quote request');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Failed to submit quote request. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
