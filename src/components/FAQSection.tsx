@@ -367,11 +367,33 @@ const FAQSection = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8">
-            <button className="w-full sm:w-auto bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:scale-105 transition-all duration-300 shadow-glow hover:shadow-glow-lg font-medium">
+            <button 
+              className="w-full sm:w-auto bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:scale-105 transition-all duration-300 shadow-glow hover:shadow-glow-lg font-medium"
+              onClick={() => {
+                // Scroll to contact section
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Contact Support
             </button>
-            <button className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/10 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:scale-105 transition-all duration-300 font-medium">
+            <button 
+              className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/10 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:scale-105 transition-all duration-300 font-medium"
+              onClick={() => {
+                // For mobile devices, this will open the phone app
+                // For desktop, it will show a confirmation dialog
+                if (!navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
+                  if (confirm('Call +91 6396594184?')) {
+                    window.open('tel:+91 6396594184', '_blank');
+                  }
+                } else {
+                  window.open('tel:+91 6396594184', '_blank');
+                }
+              }}
+            >
               <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Call Us Now
             </button>

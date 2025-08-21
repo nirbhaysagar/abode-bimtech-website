@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import QuoteRequestModal from "./QuoteRequestModal";
 import { MapPin, Phone, Mail, Clock, Globe, Users, Award, Building2, FileText, Scan, ArrowRight, Sparkles, Zap, Target, CheckCircle, MessageCircle, Send, Download, Linkedin, Twitter, Facebook, Instagram, Youtube, Map, Calendar, Shield, Zap as ZapIcon, Star, Heart, TrendingUp, MessageSquare, Headphones, Zap as ZapIcon2 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
@@ -14,6 +15,7 @@ const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   // Intersection Observer for scroll animations
@@ -403,15 +405,19 @@ const ContactSection = () => {
                   <button 
                     className="w-full text-left py-4 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105 min-h-[56px] flex items-center"
                     aria-label="Get a quote for BIM services"
+                    onClick={() => setIsQuoteModalOpen(true)}
                   >
                     <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-base font-medium">Get Quote</span>
                   </button>
-                  <button 
+                  <a 
+                    href="https://cal.com/abodebimtech/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full text-left py-4 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105 min-h-[56px] flex items-center"
                     aria-label="Book a consultation for BIM services"
                   >
                     <span className="text-white/80 group-hover:text-white transition-colors duration-300 text-base font-medium">Book Consultation</span>
-                  </button>
+                  </a>
                   <button 
                     className="w-full text-left py-4 px-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 group border border-white/5 hover:border-white/10 hover:scale-105 min-h-[56px] flex items-center"
                     aria-label="View Abode Bimtech portfolio"
@@ -524,6 +530,12 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Quote Request Modal */}
+      <QuoteRequestModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => setIsQuoteModalOpen(false)}
+      />
     </section>
   );
 };
