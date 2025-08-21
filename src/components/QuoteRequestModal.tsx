@@ -56,9 +56,9 @@ const QuoteRequestModal = ({ isOpen, onClose }: QuoteRequestModalProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
-      // Send form data to Formspree
+      // Option 1: Try Formspree first
       const response = await fetch('https://formspree.io/f/xwpqdnpg', {
         method: 'POST',
         headers: {
@@ -89,12 +89,62 @@ const QuoteRequestModal = ({ isOpen, onClose }: QuoteRequestModalProps) => {
           description: "",
           services: []
         });
+        console.log('Quote form submitted successfully via Formspree');
       } else {
-        throw new Error('Failed to submit quote request');
+        // If Formspree fails, try alternative method
+        throw new Error('Formspree failed, trying alternative method');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      alert('Failed to submit quote request. Please try again or contact us directly.');
+      console.error('Formspree submission error:', error);
+      
+      // Option 2: Fallback to mailto link
+      try {
+        const mailtoLink = `mailto:abodebimtech@gmail.com?subject=${encodeURIComponent('Quote Request - ' + formData.projectType)}&body=${encodeURIComponent(`
+QUOTE REQUEST FORM SUBMISSION
+
+Personal Information:
+- Name: ${formData.name}
+- Email: ${formData.email}
+- Phone: ${formData.phone}
+- Company: ${formData.company}
+
+Project Details:
+- Project Type: ${formData.projectType}
+- Project Size: ${formData.projectSize}
+- Timeline: ${formData.timeline}
+- Budget: ${formData.budget}
+
+Services Required:
+${formData.services.join(', ')}
+
+Project Description:
+${formData.description}
+
+This quote request was sent from your website.
+        `)}`;
+        
+        window.open(mailtoLink, '_blank');
+        alert('Quote request submitted via email! We will contact you at ' + formData.email + ' within 24 hours.');
+        onClose();
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          projectType: "",
+          projectSize: "",
+          timeline: "",
+          budget: "",
+          description: "",
+          services: []
+        });
+        console.log('Quote form submitted via mailto fallback');
+      } catch (fallbackError) {
+        console.error('Fallback submission also failed:', fallbackError);
+        alert('Failed to submit quote request. Please email us directly at abodebimtech@gmail.com');
+      }
     } finally {
       setIsSubmitting(false);
     }

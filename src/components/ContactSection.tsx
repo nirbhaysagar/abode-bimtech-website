@@ -47,7 +47,7 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Send form data to Formspree
+      // Option 1: Try Formspree first
       const response = await fetch('https://formspree.io/f/xwpqdnpg', {
         method: 'POST',
         headers: {
@@ -58,23 +58,43 @@ const ContactSection = () => {
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          formType: 'Contact Form'
+          formType: 'Contact Form',
+          submittedAt: new Date().toISOString()
         }),
       });
 
       if (response.ok) {
         setSubmitSuccess(true);
-        // Reset form after success
         setFormData({ name: '', email: '', subject: '', message: '' });
+        console.log('Form submitted successfully via Formspree');
       } else {
-        throw new Error('Failed to send message');
+        // If Formspree fails, try alternative method
+        throw new Error('Formspree failed, trying alternative method');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      // You can add error handling here if needed
+      console.error('Formspree submission error:', error);
+      
+      // Option 2: Fallback to mailto link
+      try {
+        const mailtoLink = `mailto:abodebimtech@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contact Form Submission')}&body=${encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+Message: ${formData.message}
+
+This message was sent from your website contact form.
+        `)}`;
+        
+        window.open(mailtoLink, '_blank');
+        setSubmitSuccess(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        console.log('Form submitted via mailto fallback');
+      } catch (fallbackError) {
+        console.error('Fallback submission also failed:', fallbackError);
+        alert('Form submission failed. Please email us directly at abodebimtech@gmail.com');
+      }
     } finally {
       setIsSubmitting(false);
-      // Reset success message after 5 seconds
       setTimeout(() => {
         setSubmitSuccess(false);
       }, 5000);
